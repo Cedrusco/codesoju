@@ -4,34 +4,48 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
+  
   prompting: function () {
+    var done = this.async();
     // Have Yeoman greet the user.
     // this.log(yosay(
     //   'Welcome to the prime ' + chalk.red('generator-soju') + ' generator!'
     // ));
+    this.log('Welcome to ' + chalk.red('Soju Generator') + ' v 1.0');
     this.log()
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
+      type: 'input',
+      name: 'name',
+      message: 'What is the name of your application?',
       default: true
     }];
 
     return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
+      this.appName = props.name;
+      done();
     }.bind(this));
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+    var context = {
+      appName: this.appName,
+      appDescription: this.appDescription
+    };
+    this.template('angular1/README.md', 'README.md', context);
+    this.template('angular1/package.json', 'package.json', context);
+    this.directory('angular1/client', 'client');
+    this.directory('angular1/server', 'server');
+    this.directory('angular1/.hooks', '.hooks');
+    this.bulkCopy('angular1/bower.json', 'bower.json');
+    this.bulkCopy('angular1/Gruntfile.js', 'Gruntfile.js');
+    this.bulkCopy('angular1/Gulpfile.js', 'Gulpfile.js');
+    this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh' );
+    this.bulkCopy('angular1/setup.sh', 'setup.sh' );
+    this.template('angular1/_files/toolbar.html', 'client/app/shared/templates/toolbar.html', context);
   },
 
-  install: function () {
+  installing: function () {
     this.installDependencies();
   }
 });
