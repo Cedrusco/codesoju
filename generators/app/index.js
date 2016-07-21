@@ -17,8 +17,7 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'name',
-      message: 'What is the name of your application?',
-      default: true
+      message: 'What is the name of your application?'
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -40,9 +39,11 @@ module.exports = yeoman.Base.extend({
     this.bulkCopy('angular1/bower.json', 'bower.json');
     this.bulkCopy('angular1/Gruntfile.js', 'Gruntfile.js');
     this.bulkCopy('angular1/Gulpfile.js', 'Gulpfile.js');
-    this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh' );
-    this.bulkCopy('angular1/setup.sh', 'setup.sh' );
+    this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh');
+    this.bulkCopy('angular1/setup.sh', 'setup.sh');
+    this.bulkCopy('angular1/.gitignore', '.gitignore');
     this.template('angular1/_files/toolbar.html', 'client/app/shared/templates/toolbar.html', context);
+    this.template('angular1/_files/index.html', 'server/views/index.html', context);
   },
 
   installing: function () {
