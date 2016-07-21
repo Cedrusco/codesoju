@@ -43,10 +43,9 @@ module.exports = yeoman.Base.extend({
     this.bulkCopy('angular1/setup.sh', 'setup.sh');
     this.bulkCopy('angular1/.gitignore', '.gitignore');
     this.template('angular1/_files/toolbar.html', 'client/app/shared/templates/toolbar.html', context);
-    this.template('angular1/_files/index.html', 'server/views/index.html', context);
   },
 
   installing: function () {
-    this.installDependencies();
+    this.runInstall('./setup.sh');
   }
 });
