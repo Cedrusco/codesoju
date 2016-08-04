@@ -19,7 +19,8 @@
   "dependencies": {
     "yeoman-generator": "^0.23.0",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.0"
+    "yosay": "^1.0.0",
+    "soju-repo": "Cedrusco/soju#e481abb1d7cab6e81db9a8178630405c02c8170d"
   },
   "devDependencies": {
     "yeoman-test": "^1.0.0",
