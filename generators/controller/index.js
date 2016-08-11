@@ -22,12 +22,13 @@ module.exports = yeoman.Base.extend({
 
   writing: function () {
     var context = {
-      controllerName: this.controllerName
+      controllerName: this.controllerName,
+      appName: this.determineAppname()
     };
     this.template('controller.js', 'client/app/'+ this.controllerName + '/' + this.controllerName + '.controller.js', context);
   },
 
   installing: function () {
-    this.runInstall('gulp');
+    this.runInstall('gulp buildApp');
   }
 });
