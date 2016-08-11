@@ -1,8 +1,0 @@
-<md-toolbar layout="row">    
-	<img id="sojuLogo" src="images/logo.png"></img>
-	<h6><%= appName %></h6>
-	<span flex></span>
-	<i id="hamburgerMenuButton" hide-gt-xs class="material-icons" ng-click="toggleList()">menu</i>
-	<p class="signInIcon" hide-xs ng-if="appSettings.isAuthenticated !== null && !appSettings.isAuthenticated"><i class="material-icons" role="button">account_circle</i>Sign In</p>
-	<p class="signInIcon" hide-xs ng-if="appSettings.isAuthenticated !== null && appSettings.isAuthenticated"><i class="material-icons" role="button">account_circle</i>Sign Out</p>
-</md-toolbar>
