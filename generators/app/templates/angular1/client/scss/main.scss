@@ -1,0 +1,75 @@
+
+/*******************************
+	General global settings
+	********************************/
+body{
+		overflow-y: hidden; 
+	}
+* {
+	box-sizing: border-box;
+	
+	h2{
+		font-family: 'Helvetica Neue Medium';
+		font-size: 28px;
+	}
+	h4{
+		font-family: 'HelveticaNeue-Light';
+		font-size: 14px;
+		font-weight: normal;
+	}
+	h5{
+		font-family: 'HelveticaNeue-Light';
+		font-style: italic;
+		font-size: 16px;
+		font-weight: normal;
+	}
+	h6{
+		font-family: 'HelveticaNeue-Light';
+		font-size: 12px;
+		font-weight: normal;
+	};
+	#SojuLogo{
+		width: 45px;
+		height: 40px;
+		margin: 15px;
+	};
+	.greenTitle{
+		color: #B8E986;
+	}
+	.redTitle{
+		color: #FF4D62;
+	}
+	#hamburgerMenuButton{
+		padding: 15px;
+	}
+	#hamburgerMenuButton:focus{
+		outline: none;
+	}
+	.footerImageSocial{
+		align-items: center;
+		text-align: center;
+	}
+	.footerImageSocial > #footerSocial{
+		padding: 20px;
+	}
+	#footer{
+		opacity:0.74;
+		background:#edeff1;
+		padding-left: 30px;
+	};
+	#addressFooter > h6{
+		text-align: right;
+		margin-right: 20px;
+	};
+}
+
+/*********************************************
+	Import page specific styles, mixins, variables
+	********************************************/
+	
+@import 'mixins/main';
+@import 'variables/main';
+@import 'landing/main';
+@import 'about_us/main';
+@import 'home/main';
+@import 'user_profile/main';

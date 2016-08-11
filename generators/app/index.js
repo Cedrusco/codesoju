@@ -31,18 +31,18 @@ module.exports = yeoman.Base.extend({
       appName: this.appName,
       appDescription: this.appDescription
     };
-    this.template('angular1/README.md', 'README.md', context);
-    this.template('angular1/package.json', 'package.json', context);
-    this.directory('angular1/client', 'client');
-    this.directory('angular1/server', 'server');
-    this.directory('angular1/.hooks', '.hooks');
-    this.bulkCopy('angular1/bower.json', 'bower.json');
-    this.bulkCopy('angular1/Gruntfile.js', 'Gruntfile.js');
-    this.bulkCopy('angular1/Gulpfile.js', 'Gulpfile.js');
-    this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh');
-    this.bulkCopy('angular1/setup.sh', 'setup.sh');
-    this.bulkCopy('angular1/.gitignore', '.gitignore');
-    this.template('angular1/_files/toolbar.html', 'client/app/shared/templates/toolbar.html', context);
+    this.directory('angular1', this.destinationRoot());
+    // this.template('angular1/README.md', 'README.md', context);
+    // this.template('angular1/package.json', 'package.json', context);
+    // this.directory('angular1/client', 'client');
+    // this.directory('angular1/server', 'server');
+    // this.directory('angular1/.hooks', '.hooks');
+    // this.bulkCopy('angular1/bower.json', 'bower.json');
+    // this.bulkCopy('angular1/Gruntfile.js', 'Gruntfile.js');
+    // this.bulkCopy('angular1/Gulpfile.js', 'Gulpfile.js');
+    // this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh');
+    // this.bulkCopy('angular1/setup.sh', 'setup.sh');
+    // this.bulkCopy('angular1/.gitignore', '.gitignore');
   },
 
   installing: function () {
