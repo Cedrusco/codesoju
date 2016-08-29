@@ -1,0 +1,77 @@
+<div id="container" layout="column" layout-fill>
+ <toolbar-component (menuClick)="start.toggle()"></toolbar-component>
+ <div layout="row">
+		<md-content>
+			<md-sidenav-layout class="left-navigation">
+				<md-sidenav #start mode="over" style="width: 200px; background-color:#6B7E96">
+					IT IS OPEN!
+				</md-sidenav>
+					<div id="landingSection">
+						<section flex layout="row">
+								<md-toolbar class="headerMenu">
+									<h6>WHAT IS SOJU</h6>
+									<h6>RESOURCES</h6>
+									<h6>ABOUT US</h6>
+									<h6>FAQs</h6>
+									<span flex></span>
+									<h6>LOG IN</h6>
+								</md-toolbar>
+							<div layout="row" id="landingBanner" class="sectionContent" flex>				
+								<div flex class="projectDescription">
+									<h2 class="welcomeTitle">Build an application with CODESOJU</h2>
+									<h4 class="welcomeContent">Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tinciduntue.</h4>
+									<button md-button aria-label="Get started" [routerLink]="['/home']" id="getStartedButton" href = "/home">Get started</button>
+								</div>
+								<div flex class="photoDescription">
+								</div>
+							</div>
+						</section>
+					</div>
+				
+				<section id="devResourcesSection">
+				<div layout="row" layout-wrap class="sectionContent">
+					<div flex class="devResourcesImage">
+						<img alt="" src="images/graphic_developer_resources.png">
+					</div>
+					<div flex class="devResourcesDescription">
+						<h2>Developer Resources</h2>
+						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tincidunt risus risus a diam erat.</h4>
+						<h5 class="anchorScrollArrow">About us</h5>
+						<i class="material-icons">keyboard_arrow_down</i>
+					</div>
+				</div>
+			</section>
+					<section id="aboutUsSection">
+					<div layout="row" layout-wrap class="sectionContent">
+						<div flex class="aboutUsDescription">
+							<h2>About us</h2>
+							<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tincidunt risus risus a diam erat.</h4>
+							<h5 class="anchorScrollArrow">FAQs</h5>
+							<i class="material-icons">keyboard_arrow_down</i>
+						</div>
+						<div flex class="aboutUsImage">
+							<img alt="" src="images/graphic_about_us.png">
+						</div>
+						</div>
+					</section>
+				<section id="faqsSection">
+					<div layout="row" layout-wrap class="sectionContent">
+						<div flex class="faqsImage">
+							<img alt="" src="images/graphic_faqs.png">
+						</div>
+						<div flex class="faqsDescription">
+							<h2>FAQs</h2>
+							<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum.</h4>
+							<span></span>
+							<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus.</h4>
+							<span></span>
+							<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum.</h4>
+							<span></span>
+						</div>
+					</div>
+				</section>
+			<footer-component></footer-component>
+			</md-sidenav-layout>
+		</md-content>
+	</div>
+</div>

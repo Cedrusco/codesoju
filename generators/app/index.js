@@ -18,10 +18,17 @@ module.exports = yeoman.Base.extend({
       type: 'input',
       name: 'name',
       message: 'What is the name of your application?'
+    }, {
+      type: 'input',
+      name: 'angularVersion',
+      message: 'Do you want to use Angular 1 or Angular 2?',
+      default: '1 or 2'
     }];
 
     return this.prompt(prompts).then(function (props) {
+      console.log('What is props?', props);
       this.appName = props.name;
+      this.angularVersion = props.angularVersion;
       done();
     }.bind(this));
   },
@@ -31,21 +38,20 @@ module.exports = yeoman.Base.extend({
       appName: this.appName,
       appDescription: this.appDescription
     };
-    this.directory('angular1', this.destinationRoot());
-    // this.template('angular1/README.md', 'README.md', context);
-    // this.template('angular1/package.json', 'package.json', context);
-    // this.directory('angular1/client', 'client');
-    // this.directory('angular1/server', 'server');
-    // this.directory('angular1/.hooks', '.hooks');
-    // this.bulkCopy('angular1/bower.json', 'bower.json');
-    // this.bulkCopy('angular1/Gruntfile.js', 'Gruntfile.js');
-    // this.bulkCopy('angular1/Gulpfile.js', 'Gulpfile.js');
-    // this.bulkCopy('angular1/setup_hooks.sh', 'setup_hooks.sh');
-    // this.bulkCopy('angular1/setup.sh', 'setup.sh');
-    // this.bulkCopy('angular1/.gitignore', '.gitignore');
+    if(this.angularVersion === '1') {
+      this.directory('angular1', this.destinationRoot());
+    }
+    else {
+      this.directory('angular2', this.destinationRoot());
+    }
   },
 
   installing: function () {
-    this.runInstall('./setup.sh');
+    if(this.angularVersion === '1') {
+      this.runInstall('./setup.sh');
+    }
+    else {
+      this.npmInstall();
+    }
   }
 });

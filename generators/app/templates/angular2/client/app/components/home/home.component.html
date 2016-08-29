@@ -1,0 +1,88 @@
+<div id="container" layout="column" layout-fill>
+	<toolbar-component (menuClick)="start.toggle()"></toolbar-component>
+	<section layout="row" flex>
+		<md-sidenav-layout class="left-navigation">
+			<md-sidenav class="sidebarTypeHome" #start mode="side" opened="true">
+				<sidenav-component></sidenav-component>
+			</md-sidenav>
+			<section>
+				<div layout="row" layout-wrap class="chartRowContent">
+					<div flex class="chartSection">
+						<md-toolbar>
+							 <md-icon class="material-icons chartIcon">settings_ethernet</md-icon>
+							<h2>
+							 	<span class="chartTitle">Code Quality Monitoring</span>
+							</h2>
+						</md-toolbar>
+						<base-chart class="chart"
+						[datasets]="radarChartData"
+						[labels]="radarChartLabels"
+						[options]="radarChartOptions"
+						[colors]="radarChartColours"
+						[chartType]="radarChartType"
+						(radarChartHover)="chartHovered($event)"
+						(radarChartClick)="chartClicked($event)"></base-chart>
+					</div>
+					<div flex class="chartSection">
+						<md-toolbar>
+							 <md-icon class="material-icons chartIcon">bug_report</md-icon>
+							<h2>
+							 	<span class="chartTitle">Bugs reported vs fixed</span>
+							</h2>
+							<button class="chartToggle" md-button (click)="randomize()">Toggle</button>
+						</md-toolbar>
+						<base-chart class="chart"
+						[datasets]="lineChartData"
+						[labels]="lineChartLabels"
+						[options]="lineChartOptions"
+						[colors]="lineChartColours"
+						[legend]="lineChartLegend"
+						[chartType]="lineChartType"
+						(lineChartHover)="chartHovered($event)"
+						(lineChartClick)="chartClicked($event)"></base-chart>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div layout="row" layout-wrap class="chartRowContent">
+					<div flex class="chartSection">
+						<md-toolbar>
+							 <md-icon class="material-icons chartIcon">face</md-icon>
+							<h2>
+							 	<span class="chartTitle">Developers activity</span>
+							</h2>
+						</md-toolbar>
+						<base-chart class="chart"
+							[datasets]="barChartData"
+							[labels]="barChartLabels"
+							[options]="barChartOptions"
+							[legend]="barChartLegend"
+							[colors]="barChartColours"
+							[chartType]="barChartType"
+							(barChartHover)="chartHovered($event)"
+							(barChartClick)="chartClicked($event)"></base-chart>
+					</div>
+					<div flex class="chartSection">
+						<md-toolbar>
+							 <md-icon class="material-icons chartIcon">computer</md-icon>
+							<h2>
+							 	<span class="chartTitle">Cloud Instance Metrics</span>
+							</h2>
+						</md-toolbar>
+						<base-chart class="chart"
+							[data]="doughnutChartData"
+							[labels]="doughnutChartLabels"
+							[chartType]="doughnutChartType"
+							[colors]="doughnutChartColours"
+							(doughnutChartHover)="chartHovered($event)"
+							(doughnutChartClick)="chartClicked($event)"></base-chart>
+					</div>
+				</div>
+			</section>
+		   
+		</md-sidenav-layout>
+	</section>
+	<footer-component></footer-component>
+</div>
+
+

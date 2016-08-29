@@ -33,6 +33,7 @@
 		]
 	},
 	"globals": {
-		"angular": true
+		"angular": true,
+		"Chart": true
 	}
 }

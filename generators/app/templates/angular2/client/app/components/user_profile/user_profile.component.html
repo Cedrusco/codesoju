@@ -1,0 +1,35 @@
+<div id="container" layout="column" layout-fill>
+	<toolbar-component (menuClick)="start.toggle()"></toolbar-component>
+	<section layout="row" flex style="height:100%;">
+		<md-sidenav-layout class="left-navigation">
+			<md-sidenav class="sidebarHome" #start mode="side" opened="true">
+				<sidenav-component></sidenav-component>
+			</md-sidenav>
+			<h1>User Profile</h1>
+			<h2>Validated Form</h2>
+			<div class="Testing">
+			  <md-card>
+			    <md-card-title>New Form Testing</md-card-title>
+			    <md-content>
+			      <form [formGroup]="myForm">
+			          <md-input required placeholder="First name" formControlName="first"></md-input>
+			          <div class="errorMessage">
+			            <span [hidden]="myForm.controls['first'].valid" >Name is required</span>
+			          </div>
+
+			          <md-input required placeholder="Last name" formControlName="last"></md-input>
+			          <md-datetimepicker required placeHolder="Start Date" formControlName="date"></md-datetimepicker>
+			          <md-select required clearable placeHolder="Manager" [items]=resources displayItem="name" valuePropertyName="id" formControlName="managerId" (selectedItemChange)="isModified = true"></md-select>
+			          <md-select required clearable placeHolder="ManagerItem" [items]=resources displayItem="name" formControlName="manager" (selectedItemChange)="isModified = true"></md-select>
+			      </form>
+			      <button [disabled]="!myForm.valid" (click)="click()">Submit</button>
+			      {{ myForm.value | json }}
+			      Valid: {{ myForm.valid}}
+
+			    </md-content>
+			  </md-card>
+			</div>
+		</md-sidenav-layout>
+	</section>
+	<footer-component></footer-component>
+</div>

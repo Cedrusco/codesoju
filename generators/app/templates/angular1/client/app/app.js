@@ -1,9 +1,14 @@
 'use strict';
 
-var app = angular.module('<%= appName %>', ['ngRoute', 'ngMaterial', 'ngMessages']);
+var app = angular.module('<%= appName %>', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob']);
 
-app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', function($routeProvider, $locationProvider, $mdThemingProvider) {
-	
+app.config(['lockProvider', '$routeProvider', '$locationProvider', '$mdThemingProvider', function(lockProvider, $routeProvider, $locationProvider, $mdThemingProvider) {
+
+	lockProvider.init({
+		clientID: 'FJd8Y00TDVf8HEdQl6FRsclXAdw2rj0I',
+		domain: 'cedrus.auth0.com'
+	});
+
 	$routeProvider.
 		when('/', {
 			templateUrl: 'landing/landing.html',
@@ -13,13 +18,24 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
 			templateUrl: 'home/home.html',
 			controller: 'HomeController'
 		}).
-		when('/about_us', {
-			templateUrl: 'about_us/about_us.html',
-			controller: 'AboutUsController'
+		when('/newsfeed', {
+			templateUrl: 'newsfeed/newsfeed.html',
+			controller: 'NewsfeedController'
 		}).
 		when('/user_profile', {
 			templateUrl: 'user_profile/user_profile.html',
 			controller: 'UserProfileController'
+		}).
+		when('/feed', {
+			templateUrl: 'feed/feed.html',
+			controller: 'FeedController',
+			resolve: {
+				nytFeed: ['Feed', function(Feed) {
+
+					return Feed.getNews();
+
+				}]
+			}
 		});
 		// otherwise({
 		// 	redirectTo: '/'
@@ -36,20 +52,3 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', functio
 			.primaryPalette('lightGrey');
 
 }]);
-
-// TODO: SHOULD THIS BE IN ITS OWN FILE? Since its only related to the sidebar, maybe a directive?
-app.controller('MainController', ['$rootScope', '$location', '$scope', function($rootScope, $location, $scope) {
-
-	// TODO: Should probably be part of an Auth service instead of $rootscope?
-	$rootScope.appSettings = {
-		isAuthenticated: null
-	};
-
-	$scope.selectedMenu = function(route) {
-
-		return route === $location.path();
-		
-	};
-
-}]);
-
