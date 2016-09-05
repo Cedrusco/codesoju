@@ -1,0 +1,56 @@
+{
+	"properties": {},
+	"definition": {
+		"default": [
+			{
+				"id": 634,
+				"type": "panel",
+				"attributes": {
+					"name": {
+						"value": "pnlPanel1",
+						"status": "overridden"
+					},
+					"flex": {
+						"value": "100",
+						"status": "overridden"
+					},
+					"autoHeight": {
+						"value": true,
+						"status": "overridden"
+					},
+					"toolbar": {
+						"title": {
+							"value": "'Sample View'",
+							"status": "overridden"
+						},
+						"status": "overridden"
+					}
+				},
+				"children": [
+					{
+						"id": 37954,
+						"type": "button",
+						"flex": "false",
+						"just_dropped": true,
+						"attributes": {
+							"name": {
+								"value": "btnButton1",
+								"status": "overridden"
+							},
+							"label": {
+								"value": "'Click Me'",
+								"status": "overridden"
+							}
+						},
+						"children": [],
+						"container": "layout_0_row_0_column_0"
+					}
+				],
+				"animation": {
+					"in": "fadeIn",
+					"out": "slideOutLeft"
+				}
+			}
+		]
+	}
+}
