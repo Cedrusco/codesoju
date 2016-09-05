@@ -1,0 +1,21 @@
+#sidenav > i{
+	padding: 20px;
+	font-size: 30px;
+}
+
+.sidebarTypeHome{
+	opacity:0.85;
+	background:#2d87b2;
+	color: white;
+	height: 100%;
+}
+
+.sidenavButton{
+	padding: 20px;
+	margin: 0px !important;
+}
+
+.sidenavButtonSelected {
+	border-left: 10px solid #FF4D62;
+	background-color: #2e7a9e;
+}

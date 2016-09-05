@@ -1,0 +1,34 @@
+.chart {
+	display: block;
+}
+.chartRowContent{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	display: flex;
+}
+.chartSection{
+	flex-basis: 40%;
+	flex-grow: 0;
+	margin: 10px;
+}
+.chartIcon{
+	margin: 0 10px;
+	color: #bdb5b5;
+}
+.chartTitle{
+	font-family: "Muli", sans-serif;
+	font-size:14px;
+	line-height:20px;
+	font-weight: normal;
+}
+
+@media only screen and (max-width: 480px) {
+	.chartRowContent{
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		display: flex;
+	}
+}
+

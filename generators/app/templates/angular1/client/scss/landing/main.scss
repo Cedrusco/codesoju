@@ -1,5 +1,5 @@
 /*********************************************
-  GENERAL
+  GENERAL AND SHARED
   ********************************************/
 .sectionContent{
 	flex-direction: row;
@@ -7,55 +7,74 @@
 	align-items: center;
 }
 
-#tabName > .md-button{
-	color: white;
-}
 .anchorScrollArrow{
 	margin-bottom: 0px;
 }
 
-#sidebarLanding{
-    width: 100px;
-    height: 330px;
-    background-color: rgba(143, 186, 135, 0.69);
-    color: white;
+.sidenavLanding{
+	width: 100px;
+	height: 100vw;
+	background-color: #2d87b2;
+	color: white;
 }
 
-.landingMenuChoice{
+.sidenavLandingSelect{
 	padding: 10px;
 	width: 80px;
 }
-	
+
+.projectDescription > h2, .aboutUsDescription > h2, .faqsDescription > h2{
+	color:#2d87b2;	
+	text-align:left;
+}
+
+.devResourcesImage, .aboutUsImage, .faqsImage{
+	flex-basis: 25%;
+	flex-grow: 0;
+}
+.devResourcesImage>img, .aboutUsImage>img, .faqsImage>img{
+	max-width: 200px;
+}
+
 /*********************************************
   LANDING SECTION
   ********************************************/
+.headerMenu {
+	padding: 0 30px;
+}
+.headerMenu > h6 {
+	padding: 5px 30px;
+	cursor: pointer;
+	outline: none;
+}
 
 #landingSection{
 	opacity:0.85;
-	background-image:linear-gradient(-180deg, #6B7E96 1%, #020e20 100%);
-	padding: 0 0 30px 0;
 }
-#subheader{
-	opacity:0.85;
-    background-image:linear-gradient(-180deg, #4e6582 25%, #586980 100%);
-}
+
 #getStartedButton{
-	border: 2px solid #B8E986;
-	color: #B8E986;
+	border: 2px solid #2d87b2;
+	color: #2d87b2;
 	width: 184px;
 	text-align: center;
 	margin: 0px;
 }
-.welcomeContent{
-	color: white;
-}
+
 .projectDescription {
 	flex-basis: 50%;
 	flex-grow: 0;
+	padding-bottom: 120px;
 }
+
 .photoDescription {
 	flex-basis: 25%;
 	flex-grow: 0;
+}
+#landingBanner{
+	background-image:url('images/Desktop.png');	
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 40vw;
 }
 
 /*********************************************
@@ -63,9 +82,18 @@
   ********************************************/
 
 .devResourcesDescription{
-	flex-basis: 87%;
+	flex-basis: 50%;
 	flex-grow: 0;
 	padding: 30px 0;
+	color: #ffffff;
+}
+.devResourcesDescription > h2 {
+	color: #50e3c2;
+	text-align: left;
+}
+
+#devResourcesSection{
+	background:#2d87b2;
 }
 
 /*********************************************
@@ -73,30 +101,28 @@
   ********************************************/
 
 #aboutUsSection{
-	background:#d4d9de;
+	background:#edeff1;
 }
-img#aboutUsSectionImg{
-    padding: 30px 0;
-    max-width: 100%;
-}
+
 .aboutUsDescription{
 	flex-basis: 50%;
 	flex-grow: 0;
 	padding: 30px 0;
-}
-.aboutUsPhoto{
-	flex-basis: 25%;
-	flex-grow: 0;
 }
 
 /*********************************************
   FAQs SECTION
   ********************************************/
 
-.FAQs{
-	flex-basis: 87%;
+.faqsDescription{
+	flex-basis: 50%;
 	flex-grow: 0;
 	padding: 30px 0;
+	text-align: left;
+}
+
+#faqsSection{
+	background:#a0efdd;
 }
 
 /*********************************************
@@ -104,30 +130,32 @@ img#aboutUsSectionImg{
   ********************************************/
 
 @media only screen and (max-width: 480px) {
+	#landingBanner{
+		background-image:url('images/Mobile.png');	
+		background-size: 100%;
+		background-repeat: no-repeat;
+		height: 124.9vw;
+	}
+	#landingSection{
+		padding: 0;
+	}
 	.sectionContent {
 		flex-direction: column-reverse;
 		justify-content: space-around;
 		align-items: center;
 	}
-	#landingSection{
-		padding: 0;
-	}
+	.projectDescription{
+		margin-bottom: 95px;
+	}	
 	#homeSection{
 		flex-basis: 67%;
 		padding-top: 10px;
 		padding-bottom: 20px;
 	}
-	.projectDescription, .devResourcesDescription, .FAQs, .aboutUsDescription {
+	.projectDescription, .devResourcesDescription, .faqsDescription, .aboutUsDescription {
 		padding: 0 30px;
 	}
-	img#aboutUsSectionImg{
+	.aboutUsImage>img, .devResourcesImage>img, .faqsImage>img{
 		padding: 30px;
-		max-width: 100%
-	}
-	#footer{
-		padding: 0px;
-	}
-	 #addressFooter > h6{
-		text-align: center;
 	}
 }

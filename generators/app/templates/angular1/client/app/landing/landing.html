@@ -1,82 +1,80 @@
-<div id="container" layout="column" layout-fill style="height:100%;">
+<div id="container" layout="column" layout-fill>
  <ng-include src="'shared/templates/toolbar.html'"></ng-include>
 	<div layout="row">
 		<md-content>
 			<div id="landingSection">
 				<section>
-					<md-subheader id="subheader" class="md-primary" hide-xs>
-						<div class="md-toolbar-tools" id="tabName">
-							<md-button aria-label="Home" ng-click="gotoAnchor('homeSection')"><h6>What is Soju?</h6></md-button>
-							<md-button aria-label="Dev Resources" ng-click="gotoAnchor('developerResSection')"><h6>Resources</h6></md-button>
-							<md-button aria-label="About Us" ng-click="gotoAnchor('aboutUsSection')"><h6>About Us</h6></md-button>
-							<md-button aria-label="FAQs" ng-click="gotoAnchor('faqsSection')"><h6>FAQs</h6></md-button>
-							<span flex=""></span>
-							<md-button aria-label="Log In"><h6>Log In</h6></md-button>
-							<md-button aria-label="Sign Up"><h6>Sign Up</h6></md-button>	
-						</div>
-					</md-subheader>
-				</section>
-				<section>
-					<md-sidenav id="sidebarLanding" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-						<md-button class="landingMenuChoice" ng-click="gotoAnchor('homeSection')">
+					<md-sidenav class="sidenavLanding" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+						<md-button class="sidenavLandingSelect" ng-click="gotoAnchor('homeSection')">
 							<i class="material-icons">home</i>
 						</md-button>
-						<md-button class="landingMenuChoice" ng-click="gotoAnchor('developerResSection')">
+						<md-button class="sidenavLandingSelect" ng-click="gotoAnchor('developerResSection')">
 							<i class="material-icons">build</i>
 						</md-button>
-						<md-button class="landingMenuChoice" ng-click="gotoAnchor('aboutUsSection')">
+						<md-button class="sidenavLandingSelect" ng-click="gotoAnchor('aboutUsSection')">
 							<i class="material-icons">people</i>
 						</md-button>
-						<md-button class="landingMenuChoice" ng-click="gotoAnchor('faqsSection')">
+						<md-button class="sidenavLandingSelect" ng-click="gotoAnchor('faqsSection')">
 							<i class="material-icons">help_outline</i>
 						</md-button>
-						<md-button class="landingMenuChoice">
+						<md-button class="sidenavLandingSelect">
 							<i class="material-icons">face</i>
 						</md-button>
 					</md-sidenav>
 				</section>
 				<section>
-					<div layout="row" id="homeSection" class="sectionContent">
+					<md-toolbar flex layout="row" class="headerMenu" hide-xs>
+						<h6 ng-click="gotoAnchor('homeSection')">WHAT IS SOJU</h6>
+						<h6 ng-click="gotoAnchor('devResourcesSection')">RESOURCES</h6>
+						<h6 ng-click="gotoAnchor('aboutUsSection')">ABOUT US</h6>
+						<h6 ng-click="gotoAnchor('faqsSection')">FAQs</h6>
+						<span flex></span>
+						<h6>LOG IN</h6>
+					</md-toolbar>
+					<div layout="row" id="landingBanner" class="sectionContent">
 						<div flex class="projectDescription">
-							<h2 class="greenTitle">What is Soju and how can it help you?</h2>
-							<h4 class="welcomeContent">Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tincidunt risus risus a diam erat. In justo lectus ut, consectetuer risus nunc suspendisse id libero tincidunt, arcu elit eleifend quisque lectus hendrerit libero, quam fusce sed elit dis facilisis. Phasellus donec lobortis ornare dolor. Felis in rerum facilisis pede, neque wisi nunc, mi tristique.</h4>
+							<h2 class="welcomeTitle">Build an application with CODESOJU</h2>
+							<h4 class="welcomeContent">Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tinciduntue.</h4>
 							<md-button aria-label="Get started" id="getStartedButton" href = "/home">Get started</md-button>
-							<h5 class="anchorScrollArrow welcomeContent">resources</h5>
-							<i class="material-icons welcomeContent" ng-click="gotoAnchor('developerResSection')">keyboard_arrow_down</i>
 						</div>
 						<div flex class="photoDescription">
-							<img id="landingSectionImg" alt ="" src="images/image_phone.png">
 						</div>
 					</div>
 				</section>
 			</div>
-			<section>
-				<div layout="row" layout-wrap class="sectionContent" id="developerResSection">
+			<section id="devResourcesSection">
+				<div layout="row" layout-wrap class="sectionContent">
+					<div flex class="devResourcesImage">
+						<img alt="" src="images/graphic_developer_resources.png">
+					</div>
 					<div flex class="devResourcesDescription">
-						<h2 class="redTitle">developer resources</h2>
-						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed.</h4>
-						<h5 class="anchorScrollArrow">about us</h5>
+						<h2>Developer Resources</h2>
+						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tincidunt risus risus a diam erat.</h4>
+						<h5 class="anchorScrollArrow">About us</h5>
 						<i class="material-icons" ng-click="gotoAnchor('aboutUsSection')">keyboard_arrow_down</i>
 					</div>
 				</div>
 			</section>
 			<section id="aboutUsSection">
 				<div layout="row" layout-wrap class="sectionContent">
-					<div flex class="aboutUsPhoto">
-						<img id="aboutUsSectionImg" alt="" src="images/about_us.png">
-					</div>
 					<div flex class="aboutUsDescription">
-						<h2 class="redTitle">about us</h2>
+						<h2>About us</h2>
 						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus. Vitae quis magna potenti mauris sed, rutrum sodales ut, massa id in habitant eu in vehicula, vitae mi in, augue tincidunt risus risus a diam erat.</h4>
 						<h5 class="anchorScrollArrow">FAQs</h5>
 						<i class="material-icons" ng-click="gotoAnchor('faqsSection')">keyboard_arrow_down</i>
+					</div>
+					<div flex class="aboutUsImage">
+						<img alt="" src="images/graphic_about_us.png">
 					</div>
 				</div>
 			</section>
 			<section id="faqsSection">
 				<div layout="row" layout-wrap class="sectionContent">
-					<div flex class="FAQs">
-						<h2 class="greenTitle">FAQs</h2>
+					<div flex class="faqsImage">
+						<img alt="" src="images/graphic_faqs.png">
+					</div>
+					<div flex class="faqsDescription">
+						<h2>FAQs</h2>
 						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum.</h4>
 						<span></span>
 						<h4>Lorem ipsum dolor sit amet, commodo rutrum nulla, mauris pellentesque et, amet nec tempus etiam praesent vestibulum vestibulum. Eros commodo et ante eget hac, sed feugiat commodo, turpis integer ut velit lorem in vel, cras iaculis est nec vestibulum, urna sed risus.</h4>

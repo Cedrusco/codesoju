@@ -1,0 +1,41 @@
+.cardContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.newsfeedCard{
+	height: 300px;
+	width: 250px;
+  margin: 10px;
+}
+.newsfeedCard > img {
+	width: 100%;
+}
+
+.newsfeedCard > md-card-content > h3 > a {
+  text-decoration: none;
+  color: #2d87b2;
+}
+
+.newsfeedCard > md-card-content > span {
+  font-size: 10px;
+}
+
+.md-button.newsfeed {
+  margin: 2px;
+  padding: 12px;
+}
+
+.newsFeedIconFav {
+  color: #ff6779;
+}
+
+.newsFeedIconMenu {
+  color: #a0efdd;
+}
+
+@media only screen and (max-width: 480px) {
+	.newsfeedCard{
+		width: 100%;
+	}
+}

@@ -57,6 +57,7 @@ gulp.task('buildJS', ['templateCache'], function() {
 gulp.task('buildCSS', function() {
 		return gulp.src('client/scss/main.scss')
 	.pipe(plumber())
+  .pipe(concat('main.scss'))
 	.pipe(sass())
 	.pipe(rename('style.css'))
 	.pipe(gulp.dest('client/dist/'))
@@ -64,16 +65,16 @@ gulp.task('buildCSS', function() {
 });
 
 gulp.task('lint', function() {
-	// ESLint ignores files with "node_modules" paths. 
+	// ESLint ignores files with "node_modules" paths.
 	return gulp.src([paths.javascripts[0],'!node_modules/**', '!bower_components/**', '!client/dist/**', '!client/app/assets/images/**'])
-		// eslint() attaches the lint output to the "eslint" property 
-		// of the file object so it can be used by other modules. 
+		// eslint() attaches the lint output to the "eslint" property
+		// of the file object so it can be used by other modules.
 		.pipe(eslint())
-		// eslint.format() outputs the lint results to the console. 
-		// Alternatively use eslint.formatEach() (see Docs). 
+		// eslint.format() outputs the lint results to the console.
+		// Alternatively use eslint.formatEach() (see Docs).
 		.pipe(eslint.format())
-		// To have the process exit with an error code (1) on 
-		// lint error, return the stream and pipe to failAfterError last. 
+		// To have the process exit with an error code (1) on
+		// lint error, return the stream and pipe to failAfterError last.
 		.pipe(eslint.failAfterError());
 });
 
@@ -91,7 +92,7 @@ gulp.task('start:server', function() {
 
 gulp.task('watch', function() {
 	livereload.listen();
-	gulp.watch([paths.templates, paths.javascripts], ['buildJS']);
+	gulp.watch([paths.templates, paths.javascripts], ['buildJS', 'lint']);
 	gulp.watch([paths.scss], ['buildCSS']);
 });
 
@@ -105,4 +106,4 @@ gulp.task('default', ['buildApp', 'lint', 'watch']);
 	Gulp serve task definition
 	********************************/
 
-gulp.task('serve', ['buildApp', 'start:server', 'watch']);
+gulp.task('serve', ['buildApp', 'start:server', 'lint', 'watch']);
