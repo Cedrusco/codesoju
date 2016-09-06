@@ -1,6 +1,4 @@
-/*********************************************
-  GENERAL
-  ********************************************/
+/* General */
 .sectionContent{
 	flex-direction: row;
 	justify-content: space-around;
@@ -11,9 +9,21 @@
 	margin-bottom: 0px;
 }
 
-/*********************************************
-  LANDING SECTION
-  ********************************************/
+/* Sidenav Landing */
+.sidenavLanding{
+	width: 100px;
+	height: 100vw;
+	background-color: #2d87b2;
+	color: white;
+}
+
+.sidenavLandingSelect{
+	padding: 25px;
+	width: 95px;
+}
+
+
+/* Landing Section */
 md-toolbar.headerMenu{
 	background: #eff1f3;
 }
@@ -72,9 +82,7 @@ md-toolbar.headerMenu{
 	text-align:left;
 }
 
-/*********************************************
-  DEV RESOURCES SECTION
-  ********************************************/
+/* Dev Resources Section */
 
 .devResourcesDescription{
 	flex-basis: 50%;
@@ -92,9 +100,7 @@ md-toolbar.headerMenu{
 }
 
 
-/*********************************************
-  ABOUT US SECTION
-  ********************************************/
+/* About Us Section */
 
 #aboutUsSection{
 	background:#edeff1;
@@ -106,9 +112,7 @@ md-toolbar.headerMenu{
 	padding: 30px 0;
 }
 
-/*********************************************
-  FAQs SECTION
-  ********************************************/
+/* FAQs Section */
 
 .faqsDescription{
 	flex-basis: 50%;
@@ -120,10 +124,18 @@ md-toolbar.headerMenu{
 #faqsSection{
 	background:#a0efdd;
 }
+.faqsQuestion{
+	font-weight: bold;
+	margin: 0;
+}
+.faqsAnswer{
+	font-family: "Muli", sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
+}
 
-/*********************************************
-  MEDIA QUERIES (MOBILE)
-  ********************************************/
+/* Mobile */
 
 @media only screen and (max-width: 480px) {
 	#landingBanner{

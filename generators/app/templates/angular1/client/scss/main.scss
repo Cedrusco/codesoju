@@ -3,7 +3,7 @@
 	General global settings
 	********************************/
 body{
-		overflow-y: hidden;
+		/*overflow-y: hidden;*/
 	}
 * {
 	box-sizing: border-box;
@@ -63,3 +63,4 @@ body{
 @import 'newsfeed/main';
 @import 'feed/main';
 @import 'shared/main';
+@import 'auth/main';

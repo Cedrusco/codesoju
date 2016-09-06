@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 
 	.controller('NewsfeedController', ['$scope', 'Newsfeed', '$mdSidenav', function($scope, Newsfeed, $mdSidenav) {
 

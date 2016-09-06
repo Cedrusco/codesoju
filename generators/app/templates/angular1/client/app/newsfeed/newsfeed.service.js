@@ -1,4 +1,4 @@
-angular.module('<%= appName %>')
+angular.module('Soju')
 
 	.factory('Newsfeed', ['$http', function($http) {
 
@@ -16,4 +16,4 @@ angular.module('<%= appName %>')
 			}
 		};
 
-	 }]);
+	}]);

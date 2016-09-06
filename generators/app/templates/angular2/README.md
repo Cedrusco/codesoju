@@ -1,1 +1,1 @@
-# Soju-ng2
+# <%= appName %>

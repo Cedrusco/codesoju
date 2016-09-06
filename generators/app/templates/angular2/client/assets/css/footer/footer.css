@@ -4,23 +4,22 @@
 	align-items: center;
 	display: flex;
 }
-
-	.footerImageSocial{
-		align-items: center;
-		text-align: center;
-	}
-	.footerImageSocial > #footerSocial{
-		padding: 20px;
-	}
-	#footer{
-		opacity:0.74;
-		background:#edeff1;
-		padding-left: 30px;
-	}
-	#addressFooter > h6{
-		text-align: right;
-		margin-right: 20px;
-	}
+.footerImageSocial{
+	align-items: center;
+	text-align: center;
+}
+.footerImageSocial > #footerSocial{
+	padding: 20px;
+}
+#footer{
+	opacity:0.74;
+	background:#edeff1;
+	padding-left: 30px;
+}
+#addressFooter > h6{
+	text-align: right;
+	margin-right: 20px;
+}
 
 
 @media only screen and (max-width: 480px) {

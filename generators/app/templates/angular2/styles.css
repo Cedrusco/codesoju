@@ -1,7 +1,5 @@
 
-/*******************************
-	General global settings
-	********************************/
+/* General */
 body{
 		margin: 0px;
 	}
@@ -18,7 +16,7 @@ body{
 		font-family: "Muli", sans-serif;
 		font-size: 14px;
 		line-height: 20px;
-		font-weight: normal;
+		font-weight: lighter;
 	}
 	h5{
 		font-family: "Muli", sans-serif;
@@ -68,7 +66,7 @@ body{
 		font-family: "Muli", sans-serif;
 		font-size: 12px;
 		line-height: 18px;
-		font-weight: normal;
+		font-weight: lighter;
 	}
 	h2{
 		font-family: "Muli", sans-serif;

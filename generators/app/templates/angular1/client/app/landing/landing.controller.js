@@ -1,9 +1,11 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 
 .controller('LandingController', ['$scope', '$anchorScroll', '$location', '$mdSidenav', function($scope, $anchorScroll, $location, $mdSidenav) {
-		
+
+	$scope.isLandingStyle = true;
+
 	$scope.gotoAnchor = function(eID) {
 
 		var old = $location.hash();

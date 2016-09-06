@@ -25,11 +25,11 @@
 
 commitMsgFile=$1;
 
-match=$(cat $commitMsgFile | egrep '^(<%= appName %>-[0-9]*|Refactor) .+$')
+match=$(cat $commitMsgFile | egrep '^(SOJU-[0-9]*|Refactor) .+$')
 echo Checking commit message... 
 if [ -z "$match" ] ; then 
   echo "Aborting commit:"
-  echo "  Please prefix your commit with the app name and issue number (i.e. <%= appName %>-1293) or 'Refactor'"
+  echo "  Please prefix your commit with the app name and issue number (i.e. SOJU-1293) or 'Refactor'"
   echo "  This is required in order for Jira to track commits"
   status=1
 else 

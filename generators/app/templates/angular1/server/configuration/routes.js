@@ -3,25 +3,23 @@
 */
 
 'use strict';
-var router = require('express').Router();
-var fs = require('fs');
-var path = require('path');
-
-var sourcePath = path.join(__dirname + '/../api');
-
-var routes = fs.readdirSync(sourcePath);
+var router = require('express').Router(), // eslint-disable-line new-cap
+	fs = require('fs'),
+	path = require('path'),
+	sourcePath = path.join(__dirname, '/../api'),
+	routes = fs.readdirSync(sourcePath);
 
 routes.forEach(function(route) {
 
-	if(fs.statSync(path.join(sourcePath,route)).isDirectory()){
+	if (fs.statSync(path.join(sourcePath, route)).isDirectory()) {
 
-		router.use('/' + route, require('../api/' + route))
+		router.use('/' + route, require('../api/' + route));
 
 	}
 
 });
 
-//error handler 
+// Error handler
 router.use(function(req, res) {
 
 	res.status(404).end();

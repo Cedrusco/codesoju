@@ -1,9 +1,4 @@
-<!-- 	<div layout="row">
-		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected == 'Home' }" (click)="menuSelected = 'Home';">
-			<md-icon>home</md-icon>
-		</button>
-	</div> -->
-	<div class='sidebarTypeHome'>
+<div class='sidebarTypeHome'>
 	<div layout="row">
 		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected('/home') }"[routerLink]="['/home']">
 			<md-icon>home</md-icon>
@@ -17,22 +12,22 @@
 	</div>
 	<span></span>
 	<div layout="row">
-		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected('/settings') }"[routerLink]="['/settings']">
-			<a>
-			<md-icon>settings</md-icon>
-			</a>
-		</button>
-	</div>
-	<span></span>
-	<div layout="row">
 		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected('/newsfeed') }"[routerLink]="['/newsfeed']">
 			<md-icon>tv</md-icon>
 		</button>
 	</div>
 	<span></span>
 	<div layout="row">
+		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected('/settings') }"[routerLink]="['/settings']">
+			<a>
+			<md-icon>settings</md-icon>
+			</a>
+		</button>
+	</div>	
+	<span></span>
+	<div layout="row">
 		<button md-button class="sidenavButton" [ngClass]="{'sidenavButtonSelected': menuSelected('/help') }"[routerLink]="['/help']">
 			<md-icon>help_outline</md-icon>
 		</button>
 	</div>
-	</div>
+</div>

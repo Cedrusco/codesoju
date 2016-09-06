@@ -3,13 +3,13 @@
 */
 
 'use strict';
-var router = require('express').Router();
-var fs = require('fs');
-var path = require('path');
+var router = require('express').Router(),
+	fs = require('fs'),
+	path = require('path'),
 
-var sourcePath = path.join(__dirname + '/../api');
+	sourcePath = path.join(__dirname + '/../api'),
 
-var routes = fs.readdirSync(sourcePath);
+	routes = fs.readdirSync(sourcePath);
 
 routes.forEach(function(route) {
 	if(fs.statSync(path.join(sourcePath,route)).isDirectory()){
@@ -19,7 +19,7 @@ routes.forEach(function(route) {
 
 //error handler 
 router.use(function (req, res) {
-    res.status(404).end();
+	res.status(404).end();
 });
 
 module.exports = function(app) {

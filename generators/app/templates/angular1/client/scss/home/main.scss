@@ -7,21 +7,21 @@
 
 /* Chart Section */
 .sectionChartItem {
-  overflow: hidden;
+	overflow: hidden;
 }
 /* Chart Section End */
 
 
 @media only screen and (max-width: 480px) {
-  .sectionChartContent {
-    overflow: auto;
-  }
+	.sectionChartContent {
+		overflow: auto;
+	}
 
-  .sectionChartItem {
-    overflow: hidden;
-    min-height: 100%;
-  }
-  .sectionChartItem md-content {
-    overflow: hidden;
-  }
+	.sectionChartItem {
+		overflow: hidden;
+		min-height: 100%;
+	}
+	.sectionChartItem md-content {
+		overflow: hidden;
+	}
 }

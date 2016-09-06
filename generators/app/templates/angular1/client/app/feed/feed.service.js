@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 
 .factory('Feed', ['$http', function($http) {
 

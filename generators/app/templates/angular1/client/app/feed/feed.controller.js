@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 
 .controller('FeedController', ['$scope', 'nytFeed', function($scope, nytFeed) {
 	

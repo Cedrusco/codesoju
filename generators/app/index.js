@@ -4,7 +4,7 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
-  
+
   prompting: function () {
     var done = this.async();
     // Have Yeoman greet the user.
@@ -19,10 +19,10 @@ module.exports = yeoman.Base.extend({
       name: 'name',
       message: 'What is the name of your application?'
     }, {
-      type: 'input',
+      type: 'list',
       name: 'angularVersion',
       message: 'Do you want to use Angular 1 or Angular 2?',
-      default: '1 or 2'
+      choices: ['Angular-1', 'Angular-2']
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -35,10 +35,9 @@ module.exports = yeoman.Base.extend({
 
   writing: function () {
     var context = {
-      appName: this.appName,
-      appDescription: this.appDescription
+      appName: this.appName
     };
-    if(this.angularVersion === '1') {
+    if(this.angularVersion === 'Angular-1') {
       this.directory('angular1', this.destinationRoot());
     }
     else {

@@ -1,27 +1,25 @@
 <html>
-  <head>
-    <title>Sample app SOJU ng-2</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <base href="/" />
-    <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
-    <script src="core-js/client/shim.min.js"></script>
-    <script src="chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="zone.js/dist/zone.js"></script>
-    <script src="reflect-metadata/Reflect.js"></script>
-    <script src="systemjs/dist/system.src.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('app').catch(function(err){ console.error(err); });
-    </script>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
+	<head>
+		<title>Sample app SOJU ng-2</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>    
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<base href="/" />
+		<script src="core-js/client/shim.min.js"></script>
+		<script src="chart.js/dist/Chart.bundle.min.js"></script>
+		<script src="zone.js/dist/zone.js"></script>
+		<script src="reflect-metadata/Reflect.js"></script>
+		<script src="systemjs/dist/system.src.js"></script>
+		<script src="systemjs.config.js"></script>
+		<script>
+			System.import('app').catch(function(err){ console.error(err); });
+		</script>
+	</head>
+	
+	<body>
+		<my-app>Loading...</my-app>
+	</body>
 </html>

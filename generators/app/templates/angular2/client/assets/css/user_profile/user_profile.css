@@ -1,0 +1,78 @@
+/* General */
+.userProfileSection{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	display: flex;
+}
+md-input{
+	font-family: "Muli", sans-serif;
+}
+.userProfileContent h2 {
+	color: #fb6878;
+	font-family: "Muli", sans-serif;
+}
+
+/* Form */
+.userProfileContent {
+	flex-basis: 55%;
+	flex-grow: 0;
+}
+
+.userProfileColTwo {
+	flex-basis: 25%;
+	flex-grow: 0;
+}
+/* Name Section */
+.userProfileNameSection{
+	flex-basis: 45%;
+	flex-grow: 0;	
+}
+.nameSection{
+	justify-content: space-between;
+}
+
+.userProfileNameSection md-input{
+	width: 100%;
+}
+
+/* Address Section */
+.citySection{
+	justify-content: space-between;
+}
+.userProfileSaveButton button{
+	background: #4d99bd;
+	color: #fff;
+}
+.userProfileSaveButton{
+	text-align: right;
+	margin-top: 20px;
+}
+.userProfileZipHint{
+	line-height: 20px;
+}
+
+/* Save Button Section */
+.userProfileSave{
+	color: #a0efdd;
+	cursor: pointer;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+	.userProfileSection{
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		display: flex;
+	}
+	.userProfileNameSection, .userProfileAddressSection, .userProfileCityZipStateSection{
+		margin: 10px 0;
+		
+	}
+	.userProfileNameSection{
+		flex-basis: 0;
+		flex-grow: 0;
+		
+	}
+}

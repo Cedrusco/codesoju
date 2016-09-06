@@ -12,7 +12,7 @@ var path = require('path'),
 	bodyParser = require('body-parser'),
 	config = require('./configuration/environment/development.js');
 
-require(__dirname + '/configuration/routes.js')(app);
+require(path.join(__dirname, '/configuration/routes.js'))(app);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -24,13 +24,17 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 app.use(express.static('client/dist/'));
 app.use('/*', express.static(path.join(__dirname, 'views/')));
 
-//Error catch
-app.use(function (err, req, res, next) {
-    console.error(err, typeof next);
-    res.status(err.status || 500).send(err.message || 'Internal server error.');
+// Error catch
+app.use(function(err, req, res, next) {
+
+	console.error(err, typeof next);
+	res.status(err.status || 500).send(err.message || 'Internal server error.');
+
 });
 
 
-app.listen(config.PORT, function () {
-    console.log(chalk.blue('Server started on port', chalk.magenta(config.PORT)));
+app.listen(config.PORT, function() {
+
+	console.log(chalk.blue('Server started on port', chalk.magenta(config.PORT)));
+
 });

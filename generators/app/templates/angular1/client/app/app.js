@@ -1,13 +1,34 @@
 'use strict';
 
-var app = angular.module('<%= appName %>', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob']);
+var app = angular.module('Soju', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob']);
 
-app.config(['lockProvider', '$routeProvider', '$locationProvider', '$mdThemingProvider', function(lockProvider, $routeProvider, $locationProvider, $mdThemingProvider) {
+app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpProvider', 'lockProvider', 'jwtOptionsProvider', function($routeProvider, $locationProvider, $mdThemingProvider, $httpProvider, lockProvider, jwtOptionsProvider) {
 
 	lockProvider.init({
-		clientID: 'FJd8Y00TDVf8HEdQl6FRsclXAdw2rj0I',
-		domain: 'cedrus.auth0.com'
+		clientID: '**clientid**',
+		domain: '**mydomain**.auth0.com',
+		options: {
+			auth: {
+				redirectUrl: location.href + 'home',
+				responseType: 'token'
+			}
+		}
 	});
+
+	// Configuration for angular-jwt
+	jwtOptionsProvider.config({
+		tokenGetter: function() {
+
+			return localStorage.getItem('id_token');
+
+		},
+		whiteListedDomains: ['localhost'],
+		unauthenticatedRedirectPath: '/'
+	});
+
+	// Add the jwtInterceptor to the array of HTTP interceptors
+	// so that JWTs are attached as Authorization headers
+	$httpProvider.interceptors.push('jwtInterceptor');
 
 	$routeProvider.
 		when('/', {

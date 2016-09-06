@@ -2,15 +2,14 @@
 
 	'use strict';
 
-	angular
-		.module('<%= appName %>')
-		.service('authService', authService);
+	angular.module('Soju')
+	.service('authService', authService);
 
-	authService.$inject = ['$rootScope', 'lock', 'authManager'];
+	authService.$inject = ['$rootScope', '$location', 'lock', 'authManager'];
 
-	function authService($rootScope, lock, authManager) {
+	function authService($rootScope, $location, lock, authManager) {
 
-		var userProfile = JSON.parse(localStorage.getItem('profile')) || {};
+		$rootScope.userProfile = JSON.parse(localStorage.getItem('profile')) || {};
 
 		function login() {
 
@@ -25,7 +24,8 @@
 			localStorage.removeItem('id_token');
 			localStorage.removeItem('profile');
 			authManager.unauthenticate();
-			userProfile = {};
+			$rootScope.userProfile = {};
+			window.location = '/';
 
 		}
 
@@ -55,13 +55,18 @@
 
 		}
 
-		return {
+		function isAuthenticated() {
+			
+			var idToken = localStorage.getItem('id_token') || null;
+			return (idToken === null) ? false : true;
 
-			userProfile: userProfile,
+		}
+
+		return {
 			login: login,
 			logout: logout,
-			registerAuthenticationListener: registerAuthenticationListener
-
+			registerAuthenticationListener: registerAuthenticationListener,
+			isAuthenticated: isAuthenticated
 		};
 
 	}

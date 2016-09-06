@@ -21,7 +21,8 @@ var gulp = require('gulp');
 
 var paths = {
 	javascripts: [
-		'client/app/**/*.js'
+		'client/app/**/*.js',
+		'server/**/*.js'
 	],
 	templates: [
 		'client/app/**/*.html'
@@ -42,7 +43,7 @@ gulp.task('templateCache', function() {
 		collapseBooleanAttributes: true,
 		removeComments: true
 	}))
-		.pipe(templateCache('templates.js', { module: '<%= appName %>'}))
+		.pipe(templateCache('templates.js', { module: 'Soju'}))
 		.pipe(gulp.dest('client/dist/'));
 });
 
@@ -66,7 +67,7 @@ gulp.task('buildCSS', function() {
 
 gulp.task('lint', function() {
 	// ESLint ignores files with "node_modules" paths.
-	return gulp.src([paths.javascripts[0],'!node_modules/**', '!bower_components/**', '!client/dist/**', '!client/app/assets/images/**'])
+	return gulp.src([paths.javascripts[0],paths.javascripts[1], '!node_modules/**', '!bower_components/**', '!client/dist/**', '!client/app/assets/images/**'])
 		// eslint() attaches the lint output to the "eslint" property
 		// of the file object so it can be used by other modules.
 		.pipe(eslint())
@@ -101,6 +102,12 @@ gulp.task('watch', function() {
 	********************************/
 
 gulp.task('default', ['buildApp', 'lint', 'watch']);
+
+/*******************************
+	Gulp deploy task definition
+	********************************/
+
+gulp.task('deploy', ['buildApp']);
 
 /*******************************
 	Gulp serve task definition

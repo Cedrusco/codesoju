@@ -4,12 +4,10 @@ import { MD_GRID_LIST_DIRECTIVES } from '@angular2-material/grid-list';
 
 
 @Component({
-  selector: 'footer-component',
-  styleUrls: ['client/assets/css/footer/footer.css'],
-  templateUrl: 'client/app/components/shared/footer/footer.component.html',
-  directives: [ROUTER_DIRECTIVES, MD_GRID_LIST_DIRECTIVES]
+	selector: 'footer-component',
+	styleUrls: ['client/assets/css/footer/footer.css'],
+	templateUrl: 'client/app/components/shared/footer/footer.component.html',
+	directives: [ROUTER_DIRECTIVES, MD_GRID_LIST_DIRECTIVES]
 })
 
-export class FooterComponent {
-
-}
+export class FooterComponent {}

@@ -1,8 +1,10 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 
-.controller('MainController', ['$location', '$scope', function($location, $scope) {
+.controller('MainController', ['$location', '$scope', 'featureToggle', function($location, $scope, featureToggle) {
+
+	featureToggle.init();
 
 	$scope.selectedMenu = function(route) {
 

@@ -56,13 +56,13 @@ module.exports = yeoman.Base.extend({
       console.log( 'Updating index.html...' );
       var index_file = html_wiring.readFileAsString('server/views/index.html');
       re = /<script src="scripts.js">/;
-      subst =  '\t<script src="/dfxio-static/client_scripts/inject.js"></script>\n\t<script src="scripts.js">';
+      subst =  '<script src="/dfxio-static/client_scripts/inject.js"></script>\n\t\t<script src="scripts.js">';
       index_file = index_file.replace(re, subst);
 
       html_wiring.writeFileFromString(index_file, 'server/views/index.html');
 
       /* Add the dfxio components directory */
-      this.directory('dfxio_components', this.destinationRoot());
+      this.directory('dfxio_components', this.destinationRoot()+'/dfxio_components');
 
       console.log( 'dfxio has been installed properly in your application' );
     }

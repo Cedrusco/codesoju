@@ -63,7 +63,7 @@
 .projectDescription {
 	flex-basis: 50%;
 	flex-grow: 0;
-	padding-bottom: 120px;
+	padding-bottom: 90px;
 }
 
 .photoDescription {
@@ -123,6 +123,16 @@
 
 #faqsSection{
 	background:#a0efdd;
+}
+.faqsQuestion{
+	font-weight: bold;
+	margin: 0;
+}
+.faqsAnswer{
+	font-family: "Muli", sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0;
 }
 
 /*********************************************

@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('<%= appName %>')
-
+angular.module('Soju')
 .controller('HomeController', ['$scope', '$location', '$mdSidenav', '$log', '$interval', function($scope, $location, $mdSidenav, $log, $interval) {
 
 	/* Charts Initialization */

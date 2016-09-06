@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= appName %>')
+angular.module('Soju')
 .filter('trusted', ['$sce', function($sce) {
 
 	return function(url) {
