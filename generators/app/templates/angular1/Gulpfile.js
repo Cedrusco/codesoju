@@ -1,7 +1,3 @@
-/*******************************
-	All used modules
-	********************************/
-
 var gulp = require('gulp');
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
@@ -15,26 +11,25 @@ var gulp = require('gulp');
 	eslint = require('gulp-eslint'),
 	nodemon = require('gulp-nodemon');
 
-/*******************************
-	Variables
-	********************************/
+/* Variables */
 
 var paths = {
 	javascripts: [
-		'client/app/**/*.js',
-		'server/**/*.js'
+		'client/app/**/*.js'
 	],
 	templates: [
 		'client/app/**/*.html'
 	],
 	scss: [
 		'client/scss/**/*.scss'
+	],
+	pathsToLint: [
+		'client/app/**/*.js',
+		'server/**/*.js'
 	]
 };
 
-/*******************************
-	Gulp tasks
-	********************************/
+/* Gulp tasks */
 
 gulp.task('templateCache', function() {
 	return gulp.src(paths.templates)
@@ -51,23 +46,22 @@ gulp.task('buildJS', ['templateCache'], function() {
 	return gulp.src(paths.javascripts)
 		.pipe(concat('scripts.js'))
 		.pipe(uglify())
-	.pipe(gulp.dest('client/dist/'))
-	.pipe(livereload());
+		.pipe(gulp.dest('client/dist/'))
+		.pipe(livereload());
 });
 
 gulp.task('buildCSS', function() {
-		return gulp.src('client/scss/main.scss')
-	.pipe(plumber())
-  .pipe(concat('main.scss'))
-	.pipe(sass())
-	.pipe(rename('style.css'))
-	.pipe(gulp.dest('client/dist/'))
-	.pipe(livereload());
+	return gulp.src('client/scss/main.scss')
+		.pipe(plumber())
+	  	.pipe(concat('main.scss'))
+		.pipe(sass())
+		.pipe(rename('style.css'))
+		.pipe(gulp.dest('client/dist/'))
+		.pipe(livereload());
 });
 
 gulp.task('lint', function() {
-	// ESLint ignores files with "node_modules" paths.
-	return gulp.src([paths.javascripts[0],paths.javascripts[1], '!node_modules/**', '!bower_components/**', '!client/dist/**', '!client/app/assets/images/**'])
+	return gulp.src([paths.pathsToLint[0],paths.pathsToLint[1], '!node_modules/**', '!bower_components/**', '!client/dist/**', '!client/app/assets/images/**'])
 		// eslint() attaches the lint output to the "eslint" property
 		// of the file object so it can be used by other modules.
 		.pipe(eslint())
@@ -87,30 +81,18 @@ gulp.task('start:server', function() {
 	nodemon({ script: 'server/app.js'});
 })
 
-/*******************************
-	Gulp watches
-	********************************/
-
+/* Gulp watches */
 gulp.task('watch', function() {
 	livereload.listen();
-	gulp.watch([paths.templates, paths.javascripts], ['buildJS', 'lint']);
+	gulp.watch([paths.templates, paths.pathsToLint], ['buildJS', 'lint']);
 	gulp.watch([paths.scss], ['buildCSS']);
 });
 
-/*******************************
-	Gulp default task definition
-	********************************/
-
+/* Gulp task definitions */
 gulp.task('default', ['buildApp', 'lint', 'watch']);
 
-/*******************************
-	Gulp deploy task definition
-	********************************/
-
+/* Gulp deploy task definitions */
 gulp.task('deploy', ['buildApp']);
 
-/*******************************
-	Gulp serve task definition
-	********************************/
-
+/* Gulp serve task definitions */
 gulp.task('serve', ['buildApp', 'start:server', 'lint', 'watch']);
