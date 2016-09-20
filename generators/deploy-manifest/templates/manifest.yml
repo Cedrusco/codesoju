@@ -1,4 +1,4 @@
 ---
 applications:
 - name: <%= appName %>
-  memory: <%= appMemory %>M
+  memory: <%= appMemory %>

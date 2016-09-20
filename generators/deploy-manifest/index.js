@@ -38,6 +38,7 @@ module.exports = yeoman.Base.extend({
       appMemory: this.appMemory
     };
     this.template("manifest.yml", "manifest.yml", context);
+    this.copy(".cfignore", ".cfignore");
   }
 
  });
