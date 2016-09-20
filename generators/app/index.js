@@ -46,7 +46,7 @@ module.exports = yeoman.Base.extend({
   },
 
   installing: function () {
-    if(this.angularVersion === '1') {
+    if(this.angularVersion === 'Angular-1') {
       this.runInstall('./setup.sh');
     }
     else {
