@@ -1,0 +1,67 @@
+<div layout="column" layout-fill>
+	<ng-include src="'shared/templates/toolbar.html'"></ng-include>
+	<section layout="row" flex>
+		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
+		<section layout="row">
+			<div layout="column" layout-fill>
+				<md-content layout-padding>
+					<div>
+						<h2>Stripe Integration</h2>
+						<form name="cardForm" 
+							  data-width="500"
+							  data-card-container="#card-container"
+							  data-placeholders="cardPlaceholders"
+							  data-options="cardOptions"
+							  data-messages="cardMessages">
+							<div layout-gt-sm="row">
+								<md-input-container class="md-block" flex-gt-sm="">
+									<label>Card Number</label>
+									<input required name='number' ng-model="card.number">
+									<div ng-messages="cardForm.number.$error">
+										<div ng-message="required">This is required.</div>
+									</div>
+								</md-input-container>
+								<md-input-container class="md-block" flex-gt-sm="">
+									<label>Name</label>
+									<input required name='name' ng-model="card.name">
+									<div ng-messages="cardForm.name.$error">
+										<div ng-message="required">This is required.</div>
+									</div>
+								</md-input-container>
+								<md-input-container class="md-block" flex-gt-sm="">
+									<label>Month</label>
+									<input required name='month' ng-model="card.exp_month">
+									<div ng-messages="cardForm.month.$error">
+										<div ng-message="required">This is required.</div>
+									</div>
+								</md-input-container>
+								<md-input-container class="md-block" flex-gt-sm="">
+									<label>Year</label>
+									<input required name='year' ng-model="card.exp_year">
+									<div ng-messages="cardForm.year.$error">
+										<div ng-message="required">This is required.</div>
+									</div>
+								</md-input-container>
+								<md-input-container class="md-block" flex-gt-sm="">
+									<label>CVC</label>
+									<input required name='cvc' ng-model="card.cvc">
+									<div ng-messages="cardForm.cvc.$error">
+										<div ng-message="required">This is required.</div>
+									</div>
+								</md-input-container>
+							</div>
+						</form>
+						<div flex>
+							<md-button class= "md-accent" ng-click="chargeCard()">Charge</md-button>
+							<md-button class= "md-accent" ng-click="clear()">Clear</md-button>
+						</div>
+						<div flex>
+							<md-button ng-click="barcodeScan()">Scan Barcode</md-button>
+						</div>
+					</div>
+				</md-content>
+			</div>
+		</section>
+	</section>
+	<ng-include src="'shared/templates/footer.html'"></ng-include>
+</div>

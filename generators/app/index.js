@@ -21,8 +21,8 @@ module.exports = yeoman.Base.extend({
     }, {
       type: 'list',
       name: 'angularVersion',
-      message: 'Do you want to use Angular 1 or Angular 2?',
-      choices: ['Angular-1', 'Angular-2']
+      message: 'Choose what type of app you would like to buld:',
+      choices: ['Angular-1', 'Angular-2', 'Cordova-Mobile']
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -40,8 +40,11 @@ module.exports = yeoman.Base.extend({
     if(this.angularVersion === 'Angular-1') {
       this.directory('angular1', this.destinationRoot());
     }
-    else {
+    else if (this.angularVersion === 'Angular-2') {
       this.directory('angular2', this.destinationRoot());
+    }
+    else {
+      this.directory('cordova-mobile', this.destinationRoot()); 
     }
   },
 
@@ -49,8 +52,11 @@ module.exports = yeoman.Base.extend({
     if(this.angularVersion === 'Angular-1') {
       this.runInstall('./setup.sh');
     }
-    else {
+    else if (this.angularVersion === 'Angular-2') {
       this.npmInstall();
+    }
+    else {
+      this.runInstall('./setup_mobile.sh');
     }
   }
 });
