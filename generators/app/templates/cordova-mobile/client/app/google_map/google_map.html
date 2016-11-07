@@ -1,2 +1,10 @@
-<div><md-button ng-click="showPlaces()">My Button</md-button></div>
-<div id="places" style="width:400px;height:500px;"></div>
+<div id="container" layout="column" layout-fill>
+	<ng-include src="'shared/templates/toolbar.html'"></ng-include>
+	<section layout="row" flex>
+		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
+		<md-content>
+			<div id="places" style="width:400px;height:500px;"></div>
+		</md-content>
+	</section>
+	<ng-include src="'shared/templates/footer.html'"></ng-include>
+</div>

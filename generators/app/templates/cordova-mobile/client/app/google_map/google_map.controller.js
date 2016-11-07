@@ -3,22 +3,22 @@
 angular.module('Soju')
 
 .controller('GoogleMapController', ['$scope', '$location', '$mdSidenav', '$log', function($scope, $location, $mdSidenav, $log) {
-	$scope.close = function() {
+    $scope.close = function() {
 
-		$mdSidenav('left').close()
-			.then(function() {
+        $mdSidenav('left').close()
+            .then(function() {
 
-				$log.debug('close LEFT is done');
+                $log.debug('close LEFT is done');
 
-			});
+            });
 
-	};
-	$scope.toggleList = function() {
-		
-		$mdSidenav('left').toggle();
+    };
+    $scope.toggleList = function() {
+        
+        $mdSidenav('left').toggle();
 
-	};
-	$scope.showPlaces = function(){
+    };
+    (function(){
         var Map;
         var Infowindow;
         var Latitude = undefined;
@@ -124,6 +124,6 @@ angular.module('Soju')
 
         navigator.geolocation.getCurrentPosition
             (onPlacesSuccess, onPlacesError, { enableHighAccuracy: true });
-	}
+    })();
 
 }]);
