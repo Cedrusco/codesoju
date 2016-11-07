@@ -32,8 +32,10 @@
 	</div>
 	<span></span>
 	<div layout="row">
-		<md-button class="sidenavButton">
-			<i class="material-icons">help_outline</i>
+		<md-button class="sidenavButton"
+				   ng-class="{'sidenavButtonSelected': selectedMenu('/cms_content')}"
+				   href="/cms_content">
+			<i class="material-icons" title="cms content">text_fields</i>
 		</md-button>
 	</div>
 </md-sidenav>

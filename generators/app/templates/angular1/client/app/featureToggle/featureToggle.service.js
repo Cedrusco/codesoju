@@ -5,7 +5,8 @@ angular.module('Soju')
 
 	return {
 		features: {
-			'auth': false
+			'auth': false,
+			'cms_content': false
 		},
 		init: function() {
 

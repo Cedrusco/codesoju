@@ -43,6 +43,10 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpP
 			templateUrl: 'newsfeed/newsfeed.html',
 			controller: 'NewsfeedController'
 		}).
+		when('/cms_content', {
+			templateUrl: 'cms_content/cms_content.html',
+			controller: 'CmsContentController'
+		}).
 		when('/user_profile', {
 			templateUrl: 'user_profile/user_profile.html',
 			controller: 'UserProfileController'
