@@ -62,6 +62,10 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpP
 			templateUrl: 'stripe/stripe.html',
 			controller: 'StripeController'
 		}).
+		when('/cms_content', {
+			templateUrl: 'cms_content/cms_content.html',
+			controller: 'CmsContentController'
+		}).
 		when('/google_map', {
 			templateUrl: 'google_map/google_map.html',
 			controller: 'GoogleMapController'

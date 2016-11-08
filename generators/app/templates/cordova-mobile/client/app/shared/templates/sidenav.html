@@ -39,6 +39,13 @@
 		</md-button>
 	</div>
 	<div layout="row">
+		<md-button 	class="sidenavButton"
+					ng-class="{'sidenavButtonSelected': selectedMenu('/cms_content')}"
+					href = "#/cms_content">
+			<i class="material-icons" title="cms content">text_fields</i>
+		</md-button>
+	</div>
+	<div layout="row">
 		<md-button class="sidenavButton"
 					ng-class="{'sidenavButtonSelected': selectedMenu('/google_map')}"
 					href = "#/google_map">
