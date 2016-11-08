@@ -111,12 +111,14 @@
 										</div>
 									</md-input-container>
 							</div>
-							<div layout-gt-sm="row" >
-								<img id="imageFile" style="width:100px; height:100px"></img>
-								<i class="material-icons" style="padding-left: 20px" ng-click="takePhoto()">add_a_photo</i>
-							</div>
-							<div flex>
-								<label>Profile Picture</label>
+							<div layout-gt-sm="row" layout-padding>
+								<div ng-hide="dispayProfilePhoto">
+									<h4>Click on the camera icon if you would like to add your photo to the profile.</h4>
+									<i class="material-icons" style="padding-left: 20px" ng-click="takePhoto()">add_a_photo</i>
+								</div>
+								<div ng-show="dispayProfilePhoto" layout-padding>
+									<img id="imageFile" style="width:150px; height:150px"></img>
+								</div>
 							</div>
 						</form>
 						<div flex class="userProfileSaveButton">

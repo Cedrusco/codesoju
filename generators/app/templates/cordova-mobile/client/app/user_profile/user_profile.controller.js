@@ -58,7 +58,6 @@ angular.module('Soju')
 	}
 
 	function displayImage(imgUri) {
-			console.log('URI', imgUri)
 		var elem = document.getElementById('imageFile');
 		elem.src = imgUri;
 	}
@@ -69,7 +68,7 @@ angular.module('Soju')
 		var options = setOptions(srcType);
 
 		navigator.camera.getPicture(function cameraSuccess(imageUri) {
-
+			$scope.dispayProfilePhoto = true;
 			displayImage(imageUri);
 			// if it is to be uploaded add a function here 
 

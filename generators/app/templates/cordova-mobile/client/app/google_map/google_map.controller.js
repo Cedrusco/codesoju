@@ -18,7 +18,9 @@ angular.module('Soju')
         $mdSidenav('left').toggle();
 
     };
-    (function(){
+    $scope.searchPlaces = function(){
+
+        $scope.showMap = true;
         var Map;
         var Infowindow;
         var Latitude = undefined;
@@ -55,7 +57,7 @@ angular.module('Soju')
 
                 location: latLong,
                 radius: 500,
-                type: ['pharmacy']
+                type: ['restaurant']
             }, foundStoresCallback);
 
         }
@@ -124,6 +126,6 @@ angular.module('Soju')
 
         navigator.geolocation.getCurrentPosition
             (onPlacesSuccess, onPlacesError, { enableHighAccuracy: true });
-    })();
+    };
 
 }]);

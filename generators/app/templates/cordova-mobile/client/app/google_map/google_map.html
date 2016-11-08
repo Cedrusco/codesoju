@@ -3,7 +3,12 @@
 	<section layout="row" flex>
 		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
 		<md-content>
-			<div id="places" style="width:400px;height:500px;"></div>
+			<div layout-padding layout-margin class="googleMapIntro" ng-if="!showMap">
+				<h2>Would you like to know which restaurants are around you?</h2>
+				<h6>By using GoogleMap API we can determine your physical location and to search the area around you to find restaurants that are within the reach.</h6>
+				<md-button style="background: #4d99bd; color: #fff;" ng-click="searchPlaces()">Search</md-button>
+			</div>
+			<div id="places" style="width:100vw;height:70vh;"></div>
 		</md-content>
 	</section>
 	<ng-include src="'shared/templates/footer.html'"></ng-include>
