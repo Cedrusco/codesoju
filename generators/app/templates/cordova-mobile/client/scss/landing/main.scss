@@ -141,7 +141,7 @@
 
 @media only screen and (max-width: 480px) {
 	#landingBanner{
-		background-image:url('images/Mobile.png');	
+		background-image:url('../images/Mobile.png');	
 		background-size: 100%;
 		background-repeat: no-repeat;
 		height: 124.9vw;
@@ -164,8 +164,13 @@
 	}
 	.projectDescription, .devResourcesDescription, .faqsDescription, .aboutUsDescription {
 		padding: 0 30px;
+		flex-basis:0;
+	}
+	.aboutUsImage, .devResourcesImage, .faqsImage{
+		flex-basis:0;
 	}
 	.aboutUsImage>img, .devResourcesImage>img, .faqsImage>img{
 		padding: 30px;
+		flex-basis:0;
 	}
 }
