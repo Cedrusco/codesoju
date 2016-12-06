@@ -1,11 +1,11 @@
 angular.module('Soju')
 
-	.factory('CmsContentService', ['$http', function($http) {
+	.factory('CmsContentService', ['$http', 'ENV', function($http, ENV) {
 		return {
 			getContent: function(key) {
 				return $http
 
-					.get('http://code-soju-mobile-cms.mybluemix.net/api/content')
+					.get(ENV.baseUrl + 'api/content')
 					.then(function(response) {
 						return response.data;
 

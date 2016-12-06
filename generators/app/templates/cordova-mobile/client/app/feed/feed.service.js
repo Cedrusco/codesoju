@@ -2,12 +2,12 @@
 
 angular.module('Soju')
 
-.factory('Feed', ['$http', function($http) {
+.factory('Feed', ['$http', 'ENV', function ($http, ENV) {
 
 	return {
-		getNews: function() {
+		getNews: function () {
 
-			return $http.get('https://soju-app.mybluemix.net/api/feed').then(function(res) {
+			return $http.get(ENV.baseUrl + 'api/feed').then(function (res) {
 				
 				return res.data;
 				
