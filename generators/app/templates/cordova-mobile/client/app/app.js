@@ -2,19 +2,30 @@
 
 var app = angular.module('Soju', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob', 'ngCordova']);
 
+app.constant('ENV', {
+	'name': 'development',
+	'baseUrl': window.cordova ? '<YOUR_BASE_URL>' : '/'
+});
+
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpProvider', 'lockProvider', 'jwtOptionsProvider', function($routeProvider, $locationProvider, $mdThemingProvider, $httpProvider, lockProvider, jwtOptionsProvider) {
 
 	lockProvider.init({
-		clientID: '**clientid**',
-		domain: '**mydomain**.auth0.com',
-		options: {
-			auth: {
-				redirect: false
-			},
-			rememberLastLogin: false
-		}
-	});
-
+			clientID: '**clientid**',
+			domain: '**mydomain**.auth0.com',
+			options: {
+				auth: {
+					redirect: false
+				},
+				rememberLastLogin: false,
+				theme: {
+					logo: 'images/logo.png',
+					primaryColor: '#b81b1c'
+				},
+				languageDictionary: {
+					title: 'CodeSoju'
+				}
+			}
+		});
 	// Configuration for angular-jwt
 	jwtOptionsProvider.config({
 		tokenGetter: function() {

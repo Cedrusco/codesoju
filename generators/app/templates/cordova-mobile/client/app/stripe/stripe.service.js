@@ -2,12 +2,12 @@
 
 angular.module('Soju')
 
-.factory('Stripe', ['$http', function($http) {
+.factory('Stripe', ['$http', 'ENV', function($http, ENV) {
 
 	return {
 		createTransaction: function(data) {
 
-			return $http.post('https://soju-app.mybluemix.net/api/stripeTest', data).then(function(res) {
+			return $http.post(ENV.baseUrl + 'api/stripeTest', data).then(function(res) {
 				console.log('res', res);
 				return res.data;
 				
@@ -16,7 +16,7 @@ angular.module('Soju')
 		},
 		createCustomer: function(data) {
 
-			return $http.post('https://soju-app.mybluemix.net/api/stripeTest/customer', data).then(function(res) {
+			return $http.post(ENV.baseUrl + 'api/stripeTest/customer', data).then(function(res) {
 				console.log('res', res);
 				return res.data;
 				
