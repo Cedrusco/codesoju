@@ -6,14 +6,14 @@ import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { SidenavComponent } from '../shared/sidenav/sidenav.component';
-import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
+import {ChartsModule} from 'ng2-charts/ng2-charts';
 import { MdToolbar } from '@angular2-material/toolbar';
 
 @Component({
 	selector: 'home-component',
 	templateUrl: 'client/app/components/home/home.component.html',
 	styleUrls: ['client/assets/css/home/home.css'],
-	directives: [FooterComponent, ToolbarComponent, MD_SIDENAV_DIRECTIVES, MdIcon, ROUTER_DIRECTIVES, SidenavComponent, CHART_DIRECTIVES, MdToolbar],
+	directives: [FooterComponent, ToolbarComponent, MD_SIDENAV_DIRECTIVES, MdIcon, ROUTER_DIRECTIVES, SidenavComponent, ChartsModule, MdToolbar],
 	providers: [MdIconRegistry]
 })
 export class HomeComponent {
@@ -42,7 +42,7 @@ export class HomeComponent {
 		pointBackgroundColor: 'rgba(148,159,177,1)',
 		pointHoverBorderColor: 'rgba(148,159,177,0.8)'
 		}
-	]; 
+	];
 
 	public radarChartClicked(e:any):void {
 		console.log(e);
