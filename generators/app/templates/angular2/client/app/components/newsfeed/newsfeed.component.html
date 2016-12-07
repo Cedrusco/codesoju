@@ -5,7 +5,6 @@
 			<md-sidenav class="sidebarHome" #start mode="side" opened="true">
 				<sidenav-component></sidenav-component>
 			</md-sidenav>
-			<md-content>
 				<div class='md-padding' layout="row" layout-wrap class="cardsContainer">
 					<md-card class="newsFeedCard" *ngFor="let article of articles">
 						<img class="newsFeedImage" [src]="article.image" class="md-card-image" alt="image caption">
@@ -22,7 +21,6 @@
 						</md-card-footer>
 					</md-card>
 				</div>
-			</md-content>
 		</md-sidenav-layout>
 	</section>
 	<footer-component></footer-component>

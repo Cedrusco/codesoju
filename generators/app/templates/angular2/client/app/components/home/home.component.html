@@ -14,14 +14,14 @@
 							 	<span class="chartTitle">Code Quality Monitoring</span>
 							</h2>
 						</md-toolbar>
-						<base-chart class="chart"
+						<canvas baseChart class="chart"
 						[datasets]="radarChartData"
 						[labels]="radarChartLabels"
 						[options]="radarChartOptions"
 						[colors]="radarChartColours"
 						[chartType]="radarChartType"
 						(radarChartHover)="chartHovered($event)"
-						(radarChartClick)="chartClicked($event)"></base-chart>
+						(radarChartClick)="chartClicked($event)"></canvas>
 					</div>
 					<div flex class="chartSection">
 						<md-toolbar>
@@ -31,7 +31,7 @@
 							</h2>
 							<button class="chartToggle" md-button (click)="randomize()">Toggle</button>
 						</md-toolbar>
-						<base-chart class="chart"
+						<canvas baseChart class="chart"
 						[datasets]="lineChartData"
 						[labels]="lineChartLabels"
 						[options]="lineChartOptions"
@@ -39,7 +39,7 @@
 						[legend]="lineChartLegend"
 						[chartType]="lineChartType"
 						(lineChartHover)="chartHovered($event)"
-						(lineChartClick)="chartClicked($event)"></base-chart>
+						(lineChartClick)="chartClicked($event)"></canvas>
 					</div>
 				</div>
 			</section>
@@ -52,7 +52,7 @@
 							 	<span class="chartTitle">Developers activity</span>
 							</h2>
 						</md-toolbar>
-						<base-chart class="chart"
+						<canvas baseChart class="chart"
 							[datasets]="barChartData"
 							[labels]="barChartLabels"
 							[options]="barChartOptions"
@@ -60,7 +60,7 @@
 							[colors]="barChartColours"
 							[chartType]="barChartType"
 							(barChartHover)="chartHovered($event)"
-							(barChartClick)="chartClicked($event)"></base-chart>
+							(barChartClick)="chartClicked($event)"></canvas>
 					</div>
 					<div flex class="chartSection">
 						<md-toolbar>
@@ -69,20 +69,18 @@
 							 	<span class="chartTitle">Cloud Instance Metrics</span>
 							</h2>
 						</md-toolbar>
-						<base-chart class="chart"
+						<canvas baseChart class="chart"
 							[data]="doughnutChartData"
 							[labels]="doughnutChartLabels"
 							[chartType]="doughnutChartType"
 							[colors]="doughnutChartColours"
 							(doughnutChartHover)="chartHovered($event)"
-							(doughnutChartClick)="chartClicked($event)"></base-chart>
+							(doughnutChartClick)="chartClicked($event)"></canvas>
 					</div>
 				</div>
 			</section>
-		   
+
 		</md-sidenav-layout>
 	</section>
 	<footer-component></footer-component>
 </div>
-
-

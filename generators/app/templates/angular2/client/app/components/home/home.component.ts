@@ -1,20 +1,9 @@
 import { Component } from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common';
-import { FooterComponent } from '../shared/footer/footer.component';
-import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
-import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
-import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { SidenavComponent } from '../shared/sidenav/sidenav.component';
-import {ChartsModule} from 'ng2-charts/ng2-charts';
-import { MdToolbar } from '@angular2-material/toolbar';
 
 @Component({
 	selector: 'home-component',
 	templateUrl: 'client/app/components/home/home.component.html',
-	styleUrls: ['client/assets/css/home/home.css'],
-	directives: [FooterComponent, ToolbarComponent, MD_SIDENAV_DIRECTIVES, MdIcon, ROUTER_DIRECTIVES, SidenavComponent, ChartsModule, MdToolbar],
-	providers: [MdIconRegistry]
+	styleUrls: ['client/assets/css/home/home.css']
 })
 export class HomeComponent {
 
@@ -92,14 +81,16 @@ export class HomeComponent {
 	public lineChartType:string = 'line';
 
 	public randomize():void {
-	let _lineChartData:Array<any> = new Array(this.lineChartData.length);
-	for (let i = 0; i < this.lineChartData.length; i++) {
-		_lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-		for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-			_lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+	if(this.lineChartData){
+		let _lineChartData:Array<any> = new Array(this.lineChartData.length);
+		for (let i = 0; i < this.lineChartData.length; i++) {
+			_lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
+			for (let j = 0; j < this.lineChartData[i].data.length; j++) {
+				_lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+			}
 		}
+		this.lineChartData = _lineChartData;
 	}
-	this.lineChartData = _lineChartData;
 	}
 
 	// events

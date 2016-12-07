@@ -9,8 +9,8 @@
 		'@angular':                   'node_modules/@angular',
 		'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
 		'rxjs':                       'node_modules/rxjs',
-		'@angular2-material':         'node_modules/@angular2-material',
-		'ng2-charts':                    'node_modules/ng2-charts'
+		'@angular2-material':         'node_modules/@angular/material',
+		'ng2-charts':                 'node_modules/ng2-charts'
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {
@@ -19,6 +19,9 @@
 		'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
 		'ng2-charts':                 { main: 'ng2-charts.js', defaultExtension: 'js' },
 	};
+	var materialPackageName = [
+		'material'
+	];
 	var ngPackageNames = [
 		'common',
 		'compiler',
@@ -28,8 +31,7 @@
 		'platform-browser',
 		'platform-browser-dynamic',
 		'router',
-		'router-deprecated',
-		'upgrade',
+		'upgrade'
 	];
 	var materialPkgs = [
 		'core',
@@ -51,8 +53,12 @@
 	}
 	// Bundled (~40 requests):
 	function packUmd(pkgName) {
-		packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+		packages['@angular/'+pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
 	};
+
+	function packUmdMaterial(pkgName){
+		packages['@angular/'+pkgName] = { main: '/' + pkgName + '.umd.js', defaultExtension: 'js' };
+	}
 
 
 	// Most environments should use UMD; some (Karma) need the individual index files
@@ -61,6 +67,7 @@
 	// Add package entries for angular packages
 	ngPackageNames.forEach(setPackageConfig);
 	materialPkgs.forEach(materialPack);
+	materialPackageName.forEach(packUmdMaterial);
 
 
 	var config = {
