@@ -7,9 +7,9 @@ var path = require('path'),
 	express = require('express'),
 	app = express(),
 	chalk = require('chalk');
-	
+
 //can be updated later based on env needs
-var PORT = 1337;
+var PORT = process.env.VCAP_APP_PORT || 1337;
 
 require(__dirname + '/configuration/routes.js')(app);
 
