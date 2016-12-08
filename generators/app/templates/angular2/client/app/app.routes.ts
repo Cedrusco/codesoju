@@ -13,7 +13,7 @@ import { UserProfileComponent }		from './components/user_profile/user_profile.co
 import { NewsFeedComponent }			from './components/newsfeed/newsfeed.component';
 
 import { FooterComponent }				from './components/shared/footer/footer.component';
-import { SidenavComponent }				from './components/shared/sideNav/sidenav.component';
+import { SidenavComponent }				from './components/shared/sidenav/sidenav.component';
 import { ToolbarComponent }				from './components/shared/toolbar/toolbar.component';
 
 const routes: Routes = [
