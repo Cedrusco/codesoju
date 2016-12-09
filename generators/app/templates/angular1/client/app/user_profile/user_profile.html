@@ -1,14 +1,14 @@
-<div layout="column" layout-fill>
+<div class="user-profile" layout="column" layout-fill>
 	<ng-include src="'shared/templates/toolbar.html'"></ng-include>
 	<section layout="row" flex>
 		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
-		<section layout="row" class ="userProfileSection">
+		<section layout="row" class ="section">
 			<div layout="column" layout-fill>
 				<md-content layout-padding>
-					<div class="userProfileContent">
+					<div class="content">
 						<h2>User Profile</h2>
 						<form name="userProfileForm">
-							<div class="userProfileCompanyNameSection">
+							<div class="company-name-section">
 								<div layout-gt-xs="row">
 									<md-input-container class="md-block" flex-gt-xs="">
 										<label>Company (Disabled)</label>
@@ -16,7 +16,7 @@
 									</md-input-container>
 								</div>
 							</div>
-							<div class="userProfileNameSection">
+							<div class="name-section">
 								<div layout-gt-sm="row">
 									<md-input-container class="md-block" flex-gt-sm="">
 										<label>First Name</label>
@@ -34,7 +34,7 @@
 									</md-input-container>
 								</div>
 							</div>
-							<div class="userProfileEmailBdSection">
+							<div class="email-bd-section">
 								<div layout-gt-sm="row">
 									<md-input-container class="md-block" flex-gt-sm="" class="emailSection">
 										<label>Email</label>
@@ -45,7 +45,7 @@
 											</div>
 										</div>
 									</md-input-container>
-									<div class="userProfileDropdownStyle">
+									<div class="dropdown-style">
 										<md-datepicker ng-model="user.birthday" md-placeholder="Birthday" class="ng-pristine ng-valid ng-isolate-scope ng-empty ng-valid-mindate ng-valid-maxdate ng-valid-filtered ng-valid-valid ng-touched bdSection" tabindex="-1" aria-invalid="false" style="">
 											<button class="md-datepicker-button md-icon-button md-button md-ink-ripple" type="button" ng-transclude="" tabindex="-1" aria-hidden="true" ng-click="ctrl.openCalendarPane($event)"><i class="material-icons">date_range</i></button>
 											<div class="md-datepicker-input-container" ng-class="{'md-datepicker-focused': ctrl.isFocused}">
@@ -65,14 +65,14 @@
 								</div>
 							</div>
 							<div layout-gt-sm="row">
-								<md-input-container class="md-block UserProfileAddressLineOne">
+								<md-input-container class="md-block address-line-one">
 									<label>Address Line1</label>
 									<input required ng-model="user.addressLine1" name="addressLine1">
 									<div ng-messages="userProfileForm.addressLine1.$error">
 										<div ng-message="required">This is required.</div>
 									</div>
 								</md-input-container>
-								<md-input-container class="md-block UserProfileAddressLineTwo" flex-gt-sm="">
+								<md-input-container class="md-block addressLineTwo" flex-gt-sm="">
 									<label>Address Line2</label>
 									<input required name='addressLine2' ng-model="user.addressLine2">
 									<div ng-messages="userProfileForm.addressLine2.$error">
@@ -80,7 +80,7 @@
 									</div>
 								</md-input-container>
 							</div>
-							<div layout-gt-sm="row" class="userProfileCityZipStateSection">
+							<div layout-gt-sm="row" class="city-zip-state-section">
 									<md-input-container class="md-block" flex-gt-sm="">
 										<label>City</label>
 										<input required name="city" ng-model="user.city">
@@ -89,7 +89,7 @@
 										</div>
 									</md-input-container>
 
-									<md-input-container class="md-block userProfileDropdownStyle" flex-gt-sm="">
+									<md-input-container class="md-block dropdown-style" flex-gt-sm="">
 										<label>State</label>
 										<md-select ng-model="user.state">
 											<md-option ng-repeat="state in states" value="{{state.abbrev}}">
@@ -112,7 +112,7 @@
 									</md-input-container>
 							</div>
 						</form>
-						<div flex class="userProfileSaveButton">
+						<div flex class="submit-section">
 							<md-button>Save</md-button>
 						</div>
 					</div>

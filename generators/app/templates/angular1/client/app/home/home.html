@@ -1,11 +1,11 @@
-<div id="container" layout="column" layout-fill>
+<div class="home" id="container" layout="column" layout-fill>
 	<ng-include src="'shared/templates/toolbar.html'"></ng-include>
 	<section layout="row" flex>
 		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
-		<section layout="column" flex class="sectionChartContent" hide-xs>
+		<section layout="column" flex class="section-chart-content" hide-xs>
 			<div layout="column" flex="100" layout-padding>
-				<md-content id="containerHomeRowFirst" class="sectionChartRow" layout="row" layout-xs="column" layout-padding flex="50">
-					<div class="panel sectionChartItem" layout="column" flex="50">
+				<md-content id="container-home-row-first" class="section-chart-row" layout="row" layout-xs="column" layout-padding flex="50">
+					<div class="panel section-chart-item" layout="column" flex="50">
 						<md-toolbar>
 							<div class="md-toolbar-tools">
 								<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -20,7 +20,7 @@
 							<canvas id="radar" class="chart chart-radar" chart-data="radar_data" chart-options="radar_options" chart-labels="radar_labels"></canvas>
 						</md-content>
 					</div>
-					<div class="panel sectionChartItem" layout="column" flex="50">
+					<div class="panel section-chart-item" layout="column" flex="50">
 						<md-toolbar>
 							<div class="md-toolbar-tools">
 								<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -37,8 +37,8 @@
 						</md-content>
 					</div>
 				</md-content>
-				<md-content id="containerHomeRowSecond" class="sectionChartRow" layout="row" layout-xs="column" layout-padding flex="50">
-					<div class="panel sectionChartItem" layout="column" flex="50">
+				<md-content id="container-home-row-second" class="section-chart-row" layout="row" layout-xs="column" layout-padding flex="50">
+					<div class="panel section-chart-item" layout="column" flex="50">
 						<md-toolbar>
 							<div class="md-toolbar-tools">
 								<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -53,7 +53,7 @@
 							<canvas id="base" class="chart-bubble" chart-data="bubble_data" chart-options="bubble_options" ></canvas>
 						</md-content>
 					</div>
-					<div class="panel sectionChartItem" layout="column" flex="50">
+					<div class="panel section-chart-item" layout="column" flex="50">
 						<md-toolbar>
 							<div class="md-toolbar-tools">
 								<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -73,8 +73,8 @@
 				</md-content>
 			</div>
 		</section>
-		<section layout="column" flex class="sectionChartContent" hide-gt-sm>
-			<div class="panel sectionChartItem" layout="column">
+		<section layout="column" flex class="section-chart-content" hide-gt-sm>
+			<div class="panel section-chart-item" layout="column">
 				<md-toolbar>
 					<div class="md-toolbar-tools">
 						<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -86,10 +86,10 @@
 					</div>
 				</md-toolbar>
 				<md-content layout="row" layout-padding flex>
-					<canvas id="radar sectionChartItem" class="chart chart-radar" chart-data="radar_data" chart-options="radar_options" chart-labels="radar_labels"></canvas>
+					<canvas id="radar section-chart-item" class="chart chart-radar" chart-data="radar_data" chart-options="radar_options" chart-labels="radar_labels"></canvas>
 				</md-content>
 			</div>
-			<div class="panel sectionChartItem" layout="column">
+			<div class="panel section-chart-item" layout="column">
 				<md-toolbar>
 					<div class="md-toolbar-tools">
 						<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -105,7 +105,7 @@
 					</canvas>
 				</md-content>
 			</div>
-			<div class="panel sectionChartItem" layout="column">
+			<div class="panel section-chart-item" layout="column">
 				<md-toolbar>
 					<div class="md-toolbar-tools">
 						<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
@@ -120,7 +120,7 @@
 					<canvas id="base" class="chart-bubble" chart-data="bubble_data" chart-options="bubble_options" ></canvas>
 				</md-content>
 			</div>
-			<div class="panel sectionChartItem" layout="column">
+			<div class="panel section-chart-item" layout="column">
 				<md-toolbar>
 					<div class="md-toolbar-tools">
 						<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
