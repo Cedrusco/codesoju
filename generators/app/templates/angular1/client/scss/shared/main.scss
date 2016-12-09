@@ -1,32 +1,38 @@
+.section-content{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
 /* Sidenav Section*/
 md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
  min-width: 88px !important;
  max-width: 88px !important;
 }
 
-.sidenavItem{
+.sidenav-item{
 	opacity:0.85;
 	background: #2d87b2;
 	color: white;
 	height: 100%;
 }
 
-.sidenavButton{
+.sidenav-button{
 	padding: 20px;
 	margin: 0px !important;
 }
-.sidenavButtonSelected {
+.sidenav-button-selected {
 	border-left: 10px solid #FF4D62;
 	background-color: #2e7a9e;
 }
 /* Sidenav section End*/
 
 /* Footer Section */
-.footerImageSocial{
+.footer-image-social{
 	align-items: center;
 	text-align: center;
 }
-.footerImageSocial > #footerSocial{
+.footer-image-social > #footer-social{
 	padding: 20px;
 }
 #footer{
@@ -34,7 +40,7 @@ md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-a
 	background:#edeff1;
 	padding-left: 30px;
 }
-#addressFooter > h6{
+#address-footer > h6{
 	text-align: right;
 	margin-right: 20px;
 }
@@ -42,7 +48,7 @@ md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-a
 
 
 /* SOJU logo Section */
-#sojuLogo{
+#soju-logo{
 	width: 150px;
 	height: 30px;
 	margin: 15px 60px;
@@ -53,41 +59,42 @@ md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-a
 
 
 /* Toolbar Section */
-md-toolbar.toolbarShared{
+md-toolbar.toolbar-shared{
 	background-color: #f2f3f5;
 }
-#hamburgerMenuButton{
+#hamburger-menu-button{
 	line-height: 70px;
 	margin: 0px 20px 0px 0px;
 	padding: 0px;
 }
-#hamburgerMenuButton:focus{
+#hamburger-menu-button:focus{
 	outline: none;
 	cursor: pointer;
 }
-.signInIcon{
-	display: inline-flex;
-	vertical-align: middle;
-	font-size: 13px;
-	line-height: 24px;
-}
+
 /* Toolbar Section End */
 
 
 @media only screen and (max-width: 480px) {
-	.sidenavItem{
+	.sidenav-item{
 		margin-top: 70px;
 		height: inherit;
 	}
+	
 	#footer{
 		padding: 0px;
 	}
-	#addressFooter > h6{
+	#address-footer > h6{
 		text-align: center;
 	}
-	#sojuLogo{
+	#soju-logo{
 		width: 135px;
 		height: 27px;
 		margin: 20px 25px;
+	}
+	.section-content {
+		flex-direction: column-reverse;
+		justify-content: space-around;
+		align-items: center;
 	}
 }
