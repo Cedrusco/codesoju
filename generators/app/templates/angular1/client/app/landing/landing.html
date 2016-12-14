@@ -1,4 +1,4 @@
-<div class="landing" id="container" layout="column" layout-fill>
+<div class="landing" layout="column" layout-fill>
  <ng-include src="'shared/templates/toolbar.html'"></ng-include>
 	<div layout="row">
 		<md-content>
@@ -29,11 +29,11 @@
 						<h6 ng-click="gotoAnchor('about-us-section')">ABOUT US</h6>
 						<h6 ng-click="gotoAnchor('faqs-section')">FAQs</h6>
 					</md-toolbar>
-					<div layout="row" id="landing-banner" class="section-content">
+					<div layout="row" class="landing-banner section-content">
 						<div flex class="project-description">
 							<h2>Build an application with CODESOJU</h2>
 							<h4>Codesoju has been designed to provide a set of standards, best practices and tools to a developer for the purpose of building modern Enterprise applications. It offers a step-by-step guidance for all aspects of the integrated development cycle.</h4>
-							<md-button ng-if="isAuthenticated || !features.auth" aria-label="Get started" id="get-started-button" href = "/home">Get started</md-button>
+							<md-button ng-if="isAuthenticated || !features.auth" aria-label="Get started" class="get-started-button" href = "/home">Get started</md-button>
 						</div>
 						<div flex class="photo-description">
 						</div>

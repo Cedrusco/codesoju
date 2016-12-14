@@ -2,27 +2,27 @@
 
 angular.module('Soju')
 
-	.controller('NewsfeedController', ['$scope', 'Newsfeed', '$mdSidenav', function($scope, Newsfeed, $mdSidenav) {
+.controller('NewsfeedController', ['$scope', 'Newsfeed', '$mdSidenav', function ($scope, Newsfeed, $mdSidenav) {
 
-		$scope.toggleList = function() {
+    $scope.toggleList = function () {
 
-			$mdSidenav('left').toggle();
+        $mdSidenav('left').toggle();
 
-		};
+    };
 
-		function init() {
+    function init() {
 
-			Newsfeed
-				.getArticles()
-				.then(function(cnnArticles) {
+        Newsfeed
+            .getArticles()
+            .then(function (cnnArticles) {
 
-					$scope.articles = cnnArticles;
+                $scope.articles = cnnArticles;
 
-				});
+            });
 
-		}
+    }
 
-		init();
+    init();
 
-	}]);
+}]);
 

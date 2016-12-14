@@ -2,20 +2,20 @@
 
 angular.module('Soju')
 
-.controller('MainController', ['$location', '$scope', 'featureToggle', function($location, $scope, featureToggle) {
+.controller('MainController', ['$location', '$scope', 'featureToggle', function ($location, $scope, featureToggle) {
 
-	featureToggle.init();
+    featureToggle.init();
 
-	$scope.selectedMenu = function(route) {
+    $scope.selectedMenu = function (route) {
 
-		return route === $location.path();
+        return route === $location.path();
 
-	};
+    };
 
-	$scope.navigateHome = function() {
+    $scope.navigateHome = function () {
 
-		$location.url('/');
+        $location.url('/');
 
-	};
+    };
 
 }]);
