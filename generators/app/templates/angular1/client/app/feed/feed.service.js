@@ -2,19 +2,19 @@
 
 angular.module('Soju')
 
-.factory('Feed', ['$http', function($http) {
+.factory('Feed', ['$http', function ($http) {
 
-	return {
-		getNews: function() {
+    return {
+        getNews: function () {
 
-			return $http.get('/api/feed').then(function(res) {
-				
-				return res.data;
-				
-			});
+            return $http.get('/api/feed').then(function (res) {
+                
+                return res.data;
+                
+            });
 
-		}
+        }
 
-	};
+    };
 
 }]);

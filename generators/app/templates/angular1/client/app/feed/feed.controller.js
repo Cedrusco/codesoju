@@ -2,8 +2,14 @@
 
 angular.module('Soju')
 
-.controller('FeedController', ['$scope', 'nytFeed', function($scope, nytFeed) {
-	
-	$scope.techNews = nytFeed.results;
-	
+.controller('FeedController', ['$scope', 'nytFeed', '$mdSidenav', function ($scope, nytFeed, $mdSidenav) {
+    
+    $scope.techNews = nytFeed.results;
+
+    $scope.toggleList = function () {
+
+        $mdSidenav('left').toggle();
+
+    };
+    
 }]);
