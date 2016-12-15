@@ -2,3 +2,5 @@ node_modules
 .DS_Store
 npm-debug.log
 .sass-cache
+bower_components
+www/bower_componenets
