@@ -18,6 +18,7 @@
 	<div layout="row">
 		<md-button 	class="sidenav-button"
 					ng-class="{'sidenav-button-selected': selectedMenu('/feed')}"
+					ng-click="checkNodeBaseUrl()"
 					href = "#/feed">
 			<i class="material-icons">view_headline</i>
 		</md-button>
@@ -26,6 +27,7 @@
 	<div layout="row">
 		<md-button	class="sidenav-button" 
 					ng-class="{'sidenav-button-selected': selectedMenu('/newsfeed')}"
+					ng-click="checkNodeBaseUrl()"
 					href="#/newsfeed">
 			<i class="material-icons">tv</i>
 		</md-button>
