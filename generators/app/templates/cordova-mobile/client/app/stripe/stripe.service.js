@@ -2,28 +2,30 @@
 
 angular.module('Soju')
 
-.factory('Stripe', ['$http', 'ENV', function($http, ENV) {
+.factory('Stripe', ['$http', 'ENV', function ($http, ENV) {
 
-	return {
-		createTransaction: function(data) {
+    return {
+        createTransaction: function (data) {
 
-			return $http.post(ENV.baseUrl + 'api/stripeTest', data).then(function(res) {
-				console.log('res', res);
-				return res.data;
-				
-			});
+            return $http.post(ENV.baseUrl + 'api/stripeTest', data).then(function (res) {
 
-		},
-		createCustomer: function(data) {
+                console.log('res', res);
+                return res.data;
+                
+            });
 
-			return $http.post(ENV.baseUrl + 'api/stripeTest/customer', data).then(function(res) {
-				console.log('res', res);
-				return res.data;
-				
-			});
+        },
+        createCustomer: function (data) {
 
-		}
+            return $http.post(ENV.baseUrl + 'api/stripeTest/customer', data).then(function (res) {
 
-	};
+                console.log('res', res);
+                return res.data;
+                
+            });
+
+        }
+
+    };
 
 }]);

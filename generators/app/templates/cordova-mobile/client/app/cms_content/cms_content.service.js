@@ -1,15 +1,22 @@
 angular.module('Soju')
 
-	.factory('CmsContentService', ['$http', 'ENV', function($http, ENV) {
-		return {
-			getContent: function(key) {
-				return $http
+.factory('CmsContentService', ['$http', 'ENV', function ($http, ENV) {
 
-					.get(ENV.baseUrl + 'api/content')
-					.then(function(response) {
-						return response.data;
+    return {
+        getContent: function () {
+            
+            return $http
 
-					});
-				}
-			}
-	}]);
+                .get(ENV.baseUrl + 'api/content')
+
+                .then(function (response) {
+
+                    return response.data;
+
+                });
+
+        }
+
+    };
+
+}]);
