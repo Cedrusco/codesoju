@@ -2,134 +2,142 @@
 
 angular.module('Soju')
 
-.controller('GoogleMapController', ['$scope', '$location', '$mdSidenav', '$log', function($scope, $location, $mdSidenav, $log) {
-	$scope.close = function() {
+.controller('GoogleMapController', ['$scope', '$location', '$mdSidenav', '$log', function ($scope, $location, $mdSidenav, $log) {
+    
+    $scope.close = function () {
 
-		$mdSidenav('left').close()
-			.then(function() {
+        $mdSidenav('left').close()
+            .then(function () {
 
-				$log.debug('close LEFT is done');
+                $log.debug('close LEFT is done');
 
-			});
+            });
 
-	};
-	$scope.toggleList = function() {
-		
-		$mdSidenav('left').toggle();
+    };
 
-	};
-	$scope.searchPlaces = function(){
-		if(angular.element(document.querySelector('#mapExecute')).length){
-			
-			$scope.showMap = true;
-			var Map;
-			var Infowindow;
-			var Latitude = undefined;
-			var Longitude = undefined;
+    $scope.toggleList = function () {
+        
+        $mdSidenav('left').toggle();
 
-			// Success callback for get geo coordinates
+    };
 
-			var onPlacesSuccess = function (position) {
-				Latitude = position.coords.latitude;
-				Longitude = position.coords.longitude;
+    $scope.searchPlaces = function () {
 
-				getPlaces(Latitude, Longitude);
+        if (angular.element(document.querySelector('#mapExecute')).length) {
+            
+            $scope.showMap = true;
+            var Map,
+                Infowindow,
+                Latitude,
+                Longitude;
 
-			}
+            // Success callback for get geo coordinates
 
-			// Get places by using coordinates
+            var onPlacesSuccess = function (position) {
+                
+                Latitude = position.coords.latitude;
+                Longitude = position.coords.longitude;
 
-			function getPlaces(latitude, longitude) {
-				var latLong = new google.maps.LatLng(latitude, longitude);
+                getPlaces(Latitude, Longitude);
 
-				var mapOptions = {
+            };
 
-					center: new google.maps.LatLng(latitude, longitude),
-					zoom: 15,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
+            // Get places by using coordinates
 
-				};
-				Map = new google.maps.Map(document.getElementById("places"), mapOptions);
+            function getPlaces(latitude, longitude) {
 
-				Infowindow = new google.maps.InfoWindow();
+                var latLong = new google.maps.LatLng(latitude, longitude),
 
-				var service = new google.maps.places.PlacesService(Map);
-				service.nearbySearch({
+                    mapOptions = {
 
-					location: latLong,
-					radius: 500,
-					type: ['restaurant']
-				}, foundStoresCallback);
+                        center: new google.maps.LatLng(latitude, longitude),
+                        zoom: 15,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
 
-			}
+                    };
+                Map = new google.maps.Map(document.getElementById('places'), mapOptions);
 
-			// Success callback for watching your changing position
+                Infowindow = new google.maps.InfoWindow();
 
-			var onPlacesWatchSuccess = function (position) {
+                var service = new google.maps.places.PlacesService(Map);
+                service.nearbySearch({
 
-				var updatedLatitude = position.coords.latitude;
-				var updatedLongitude = position.coords.longitude;
+                    location: latLong,
+                    radius: 500,
+                    type: ['restaurant']
+                }, foundStoresCallback);
 
-				if (updatedLatitude != Latitude && updatedLongitude != Longitude) {
+            }
 
-					Latitude = updatedLatitude;
-					Longitude = updatedLongitude;
+            // Success callback for watching your changing position
 
-					getPlaces(updatedLatitude, updatedLongitude);
-				}
-			}
+            var onPlacesWatchSuccess = function (position) {
 
-			// Success callback for locating stores in the area
+                var updatedLatitude = position.coords.latitude,
+                    updatedLongitude = position.coords.longitude;
 
-			function foundStoresCallback(results, status) {
-				if (status === google.maps.places.PlacesServiceStatus.OK) {
+                if (updatedLatitude !== Latitude && updatedLongitude !== Longitude) {
 
-					for (var i = 0; i < results.length; i++) {
+                    Latitude = updatedLatitude;
+                    Longitude = updatedLongitude;
 
-						createMarker(results[i]);
+                    getPlaces(updatedLatitude, updatedLongitude);
 
-					}
-				}
-			}
+                }
 
-			// Place a pin for each store on the map
+            };
 
-			function createMarker(place) {
-				var placeLoc = place.geometry.location;
+            // Success callback for locating stores in the area
 
-				var marker = new google.maps.Marker({
-					map: Map,
-					position: place.geometry.location
-				});
+            function foundStoresCallback(results, status) {
 
-				google.maps.event.addListener(marker, 'click', function () {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-					Infowindow.setContent(place.name);
-					Infowindow.open(Map, this);
+                    for (var i = 0; i < results.length; i++) {
 
-				});
-			}
+                        createMarker(results[i]);
 
-			// Error callback
+                    }
 
-			function onPlacesError(error) {
-				console.log('code: ' + error.code + '\n' +
-					'message: ' + error.message + '\n');
-			}
+                }
 
-			// Watch your changing position
+            }
 
-			function watchPlacesPosition() {
+            // Place a pin for each store on the map
 
-				return navigator.geolocation.watchPosition
-				(onPlacesWatchSuccess, onPlacesError, { enableHighAccuracy: true });
-			}
+            function createMarker(place) {
 
-			navigator.geolocation.getCurrentPosition
-				(onPlacesSuccess, onPlacesError, { enableHighAccuracy: true });
-		}else{
-			alert('We do not have your Google Map developer key. Please run a helper operator\n yo soju:geolocation_google_map\n to enable this feature')
-		}
-	};
+                var marker = new google.maps.Marker({
+                    map: Map,
+                    position: place.geometry.location
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+
+                    Infowindow.setContent(place.name);
+                    Infowindow.open(Map, this);
+
+                });
+
+            }
+
+            // Error callback
+
+            function onPlacesError(error) {
+
+                console.log('code: ' + error.code + '\n' +
+                    'message: ' + error.message + '\n');
+
+            }
+
+            navigator.geolocation.getCurrentPosition(onPlacesSuccess, onPlacesError, { enableHighAccuracy: true });
+
+        } else {
+
+            alert('We do not have your Google Map developer key. Please run a helper operator\n yo soju:geolocation_google_map\n to enable this feature');
+
+        }
+
+    };
 
 }]);

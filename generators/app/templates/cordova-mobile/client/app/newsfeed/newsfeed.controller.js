@@ -2,45 +2,51 @@
 
 angular.module('Soju')
 
-	.controller('NewsfeedController', ['$scope', 'Newsfeed', '$mdSidenav', '$cordovaSocialSharing', function($scope, Newsfeed, $mdSidenav, $cordovaSocialSharing) {
+    .controller('NewsfeedController', ['$scope', 'Newsfeed', '$mdSidenav', '$cordovaSocialSharing', function ($scope, Newsfeed, $mdSidenav, $cordovaSocialSharing) {
 
-		$scope.toggleList = function() {
+        $scope.toggleList = function () {
 
-			$mdSidenav('left').toggle();
+            $mdSidenav('left').toggle();
 
-		};
+        };
 
-		//TESTING SOCIAL SHARING
-		$scope.share = function(link){
-			var options = {
-				  message: 'Check out this great link!', // not supported on some apps (Facebook, Instagram)
-				  subject: 'Soju Recommendations', // fi. for email
-				  url: link
-				}
-			$cordovaSocialSharing.
-			  shareWithOptions(options)// Share via native share sheet
-			  .then(function(result) {
-				console.log('result', result)
-				// Success!
-			  }, function(err) {
-				console.log('err', err);
-				// An error occured. Show a message to the user
-			  });
-		};
+        // TESTING SOCIAL SHARING
+        $scope.share = function (link) {
+            
+            var options = {
+                message: 'Check out this great link!', // not supported on some apps (Facebook, Instagram)
+                subject: 'Soju Recommendations', // fi. for email
+                url: link
+            };
+            $cordovaSocialSharing.
+                shareWithOptions(options)// Share via native share sheet
+                    .then(function (result) {
+                        
+                        console.log('result', result);
+                        // Success!
+                    
+                    }, function (err) {
+                        
+                        console.log('err', err);
+                        // An error occured. Show a message to the user
+                    
+                    });
+        
+        };
 
-		function init() {
+        function init() {
 
-			Newsfeed
-				.getArticles()
-				.then(function(cnnArticles) {
+            Newsfeed
+                .getArticles()
+                .then(function (cnnArticles) {
 
-					$scope.articles = cnnArticles;
+                    $scope.articles = cnnArticles;
 
-				});
+                });
 
-		}
+        }
 
-		init();
+        init();
 
-	}]);
+    }]);
 

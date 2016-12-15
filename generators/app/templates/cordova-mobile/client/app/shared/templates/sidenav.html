@@ -1,55 +1,53 @@
-<md-sidenav class="sidenavItem" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-xs')">
+<md-sidenav class="sidenav-item" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-xs')">
 	<div layout="row">
-		<md-button 	class="sidenavButton"
-					ng-class="{'sidenavButtonSelected':selectedMenu('/home')}"
+		<md-button 	class="sidenav-button"
+					ng-class="{'sidenav-button-selected':selectedMenu('/home')}"
 					href = "#/home">
 			<i class="material-icons">home</i>
 		</md-button>
 	</div>
 	<span></span>
 	<div layout="row">
-		<md-button 	class="sidenavButton" 
-					ng-class="{'sidenavButtonSelected': selectedMenu('/user_profile')}" 
+		<md-button 	class="sidenav-button" 
+					ng-class="{'sidenav-button-selected': selectedMenu('/user_profile')}" 
 					href = "#/user_profile">
 			<i class="material-icons">account_box</i>
 		</md-button>
 	</div>
 	<span></span>
 	<div layout="row">
-		<md-button 	class="sidenavButton"
-					ng-click="checkNodeBaseUrl()"
-					ng-class="{'sidenavButtonSelected': selectedMenu('/feed')}"
+		<md-button 	class="sidenav-button"
+					ng-class="{'sidenav-button-selected': selectedMenu('/feed')}"
 					href = "#/feed">
 			<i class="material-icons">view_headline</i>
 		</md-button>
 	</div>
 	<span></span>
 	<div layout="row">
-		<md-button	class="sidenavButton" 
-					ng-click="checkNodeBaseUrl()"
-					ng-class="{'sidenavButtonSelected': selectedMenu('/newsfeed')}"
+		<md-button	class="sidenav-button" 
+					ng-class="{'sidenav-button-selected': selectedMenu('/newsfeed')}"
 					href="#/newsfeed">
 			<i class="material-icons">tv</i>
 		</md-button>
 	</div>
 	<span></span>
 	<div layout="row">
-		<md-button class="sidenavButton"
-					ng-class="{'sidenavButtonSelected': selectedMenu('/stripe')}"
+		<md-button class="sidenav-button"
+					ng-class="{'sidenav-button-selected': selectedMenu('/stripe')}"
 					href = "#/stripe">
 			<i class="material-icons">monetization_on</i>
 		</md-button>
 	</div>
 	<div layout="row">
-		<md-button 	class="sidenavButton"
-					ng-class="{'sidenavButtonSelected': selectedMenu('/cms_content')}"
+		<md-button 	class="sidenav-button"
+					ng-class="{'sidenav-button-selected': selectedMenu('/cms_content')}"
 					href = "#/cms_content">
 			<i class="material-icons" title="cms content">text_fields</i>
 		</md-button>
 	</div>
 	<div layout="row">
-		<md-button class="sidenavButton"
-					ng-class="{'sidenavButtonSelected': selectedMenu('/google_map')}"
+		<md-button class="sidenav-button"
+					ng-class="{'sidenav-button-selected': selectedMenu('/google_map')}"
 					href = "#/google_map">
 			<i class="material-icons">add_location</i>
 		</md-button>

@@ -51,8 +51,8 @@ module.exports = yeoman.Base.extend({
 
 			//insert identifier to notify app that the key is available
 			var google_map_html = html_wiring.readFileAsString('client/app/google_map/google_map.html'),
-				regex = /class="googleMapIntro"/,
-				str_subst = 'class="googleMapIntro" id="mapExecute"';
+				regex = /class="intro"/,
+				str_subst = 'class="intro" id="mapExecute"';
 
 			google_map_html = google_map_html.replace(regex, str_subst);
 			html_wiring.writeFileFromString(google_map_html, 'client/app/google_map/google_map.html')

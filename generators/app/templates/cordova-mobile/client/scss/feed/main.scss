@@ -1,3 +1,17 @@
-.news-feed {
-	overflow: scroll;
+.feed{
+    .news-feed {
+        overflow: scroll;
+    }
+    .md-button.icon-fav, .md-button.icon-menu {
+        margin: 2px;
+        padding: 12px;
+    }
+
+    .icon-fav {
+        color: #ff6779;
+    }
+
+    .icon-menu {
+        color: #a0efdd;
+    }
 }
