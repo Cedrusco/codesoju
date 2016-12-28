@@ -1,75 +1,82 @@
 'use strict';
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
-var html_wiring = require("html-wiring")
+var yeoman = require('yeoman-generator'),
+    html_wiring = require('html-wiring');
 
 module.exports = yeoman.Base.extend({
 
-  prompting: function () {
-    var done = this.async();
+    prompting: function () {
 
-    var prompts = [
-    ];
+        var done = this.async();
 
-    return this.prompt(prompts).then(function (props) {
-      done();
-    }.bind(this));
-  },
+        var prompts = [
+        ];
 
-  writing: function () {
-    var context = {},
-      isInstalled = false;
+        return this.prompt(prompts).then(function (props) {
 
-    /* Search and install DFXIO dependency */
-    var package_file = JSON.parse(html_wiring.readFileAsString('package.json'));
-    if (!package_file.dependencies['dfxio']) {
+            done();
+    
+        }.bind(this));
+  
+    },
 
-      console.log( 'Adding dfxio as a dependency...' );
+    writing: function () {
 
-      package_file.dependencies['dfxio'] = '*';
-      html_wiring.writeFileFromString(JSON.stringify(package_file, null, '\t'), 'package.json');
-    } else {
-      isInstalled = true;
-      console.log( 'dfxio is already registered as a dependency...' );
-    }
+        var context = {},
+            isInstalled = false;
 
-    /* Initialize dfxio in the current app */
-    if (!isInstalled) {
+        /* Search and install DFXIO dependency */
+        var package_file = JSON.parse(html_wiring.readFileAsString('package.json'));
+        if (!package_file.dependencies['dfxio']) {
 
-      /* Update app.js */
-      console.log( 'Updating app.js...' );
-      var app_file = html_wiring.readFileAsString('server/app.js');
+            this.log('Adding dfxio as a dependency...');
 
-      var re = /\'use strict\';\n/g;
-      var subst = '\'use strict\'\nvar dfxio = require(\'dfxio\');\n';
-      app_file = app_file.replace(re, subst);
+            package_file.dependencies['dfxio'] = '*';
+            html_wiring.writeFileFromString(JSON.stringify(package_file, null, '\t'), 'package.json');
+    
+        } else {
 
-      re = /app.listen/;
-      subst =  'app.use(dfxio);\n' +
+            isInstalled = true;
+            this.log('dfxio is already registered as a dependency...');
+    
+        }
+
+         /* Initialize dfxio in the current app */
+        if (!isInstalled) {
+
+            /* Update app.js */
+            this.log( 'Updating app.js...' );
+            var app_file = html_wiring.readFileAsString('server/app.js');
+
+            var re = /\'use strict\';\n/g;
+            var subst = '\'use strict\'\nvar dfxio = require(\'dfxio\');\n';
+            app_file = app_file.replace(re, subst);
+
+            re = /app.listen/;
+            subst =  'app.use(dfxio);\n' +
                 'app.use(express.static(path.join(__dirname, \'../dfxio_components\')));\napp.listen';
-      app_file = app_file.replace(re, subst);
+            app_file = app_file.replace(re, subst);
 
-      html_wiring.writeFileFromString(app_file, 'server/app.js');
+            html_wiring.writeFileFromString(app_file, 'server/app.js');
 
-      /* Update index.html */
-      console.log( 'Updating index.html...' );
-      var index_file = html_wiring.readFileAsString('server/views/index.html');
-      re = /<script src="scripts.js">/;
-      subst =  '<script src="/dfxio-static/client_scripts/inject.js"></script>\n\t\t<script src="scripts.js">';
-      index_file = index_file.replace(re, subst);
+            /* Update index.html */
+            this.log( 'Updating index.html...' );
+            var index_file = html_wiring.readFileAsString('server/views/index.html');
+            re = /<script src="scripts.js">/;
+            subst =  '<script src="/dfxio-static/client_scripts/inject.js"></script>\n\t\t<script src="scripts.js">';
+            index_file = index_file.replace(re, subst);
 
-      html_wiring.writeFileFromString(index_file, 'server/views/index.html');
+            html_wiring.writeFileFromString(index_file, 'server/views/index.html');
 
-      /* Add the dfxio components directory */
-      this.directory('dfxio_components', this.destinationRoot()+'/dfxio_components');
+            /* Add the dfxio components directory */
+            this.directory('dfxio_components', this.destinationRoot() + '/dfxio_components');
 
-      console.log( 'dfxio has been installed properly in your application' );
+            this.log( 'dfxio has been installed properly in your application' );
+    
+        }
+
+    },
+
+    installing: function () {
+
     }
-
-  },
-
-  installing: function () {
-
-  }
 });

@@ -1,33 +1,32 @@
 {
   "name": "generator-soju",
-  "version": "0.0.0",
-  "description": "Generate your Soju App.",
+  "version": "1.0.0",
+  "description": "Generate your CodeSoju App.",
   "homepage": "https://github.com/Cedrusco/soju-generator",
   "author": {
     "name": "CedrusCo",
     "email": "info@cedrusco.com",
-    "url": ""
+    "url": "codesoju.io"
   },
   "files": [
     "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "codesoju",
     "yeoman-generator"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
-    "inquirer": "^2.0.0",
-    "soju-repo": "Cedrusco/soju#e481abb1d7cab6e81db9a8178630405c02c8170d",
-    "yeoman-generator": "^0.23.0",
-    "yosay": "^1.0.0"
+    "yeoman-generator": "^0.23.0"
   },
   "devDependencies": {
     "yeoman-test": "^1.0.0",
     "yeoman-assert": "^2.0.0",
-    "eslint": "^2.1.0",
-    "eslint-config-xo-space": "^0.13.0",
+    "babel-eslint": "^6.1.2",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-es5": "^1.1.0",
+    "eslint-plugin-react": "^6.7.1",
     "gulp": "^3.9.0",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
@@ -36,12 +35,6 @@
     "gulp-mocha": "^2.0.0",
     "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^2.1.0"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
   },
   "repository": "CedrusCo/generator-soju",
   "scripts": {

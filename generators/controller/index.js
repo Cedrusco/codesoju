@@ -1,34 +1,39 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
   
-  prompting: function () {
-    var done = this.async();
+    prompting: function () {
 
-    var prompts = [{
-      type: 'input',
-      name: 'name',
-      message: 'What is the name of your controller?'
-    }];
+        var done = this.async(),
+            prompts = [{
+                type: 'input',
+                name: 'name',
+                message: 'What is the name of your controller?'
+            }];
 
-    return this.prompt(prompts).then(function (props) {
-      this.controllerName = props.name;
-      done();
-    }.bind(this));
-  },
+        return this.prompt(prompts).then(function (props) {
 
-  writing: function () {
-    var context = {
-      controllerName: this.controllerName,
-      appName: this.determineAppname()
-    };
-    this.template('controller.js', 'client/app/'+ this.controllerName + '/' + this.controllerName + '.controller.js', context);
-  },
+            this.controllerName = props.name;
+            done();
+        
+        }.bind(this));
+  
+    },
 
-  installing: function () {
-    this.runInstall('gulp buildApp');
-  }
+    writing: function () {
+
+        var context = {
+            controllerName: this.controllerName,
+            appName: this.determineAppname()
+        };
+        this.template('controller.js', 'client/app/' + this.controllerName + '/' + this.controllerName + '.controller.js', context);
+  
+    },
+
+    installing: function () {
+
+        this.runInstall('gulp buildApp');
+  
+    }
 });
