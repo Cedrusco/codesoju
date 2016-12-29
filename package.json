@@ -1,12 +1,12 @@
 {
   "name": "generator-codesoju",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Generate your CodeSoju App.",
-  "homepage": "https://github.com/Cedrusco/soju-generator",
+  "homepage": "http://codesoju.io",
   "author": {
-    "name": "CedrusCo",
+    "name": "Cedrus",
     "email": "info@cedrusco.com",
-    "url": "codesoju.io"
+    "url": "https://www.cedrusco.com"
   },
   "files": [
     "generators"
@@ -17,17 +17,18 @@
     "codesoju",
     "yeoman-generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cedrusco/codesoju"
+  },
   "dependencies": {
     "chalk": "^1.0.0",
-    "yeoman-generator": "^0.23.0"
+    "yeoman-generator": "^1.0.0"
   },
   "devDependencies": {
     "yeoman-test": "^1.0.0",
     "yeoman-assert": "^2.0.0",
-    "babel-eslint": "^6.1.2",
     "eslint": "^2.13.1",
-    "eslint-config-airbnb-es5": "^1.1.0",
-    "eslint-plugin-react": "^6.7.1",
     "gulp": "^3.9.0",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
@@ -37,7 +38,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^2.1.0"
   },
-  "repository": "CedrusCo/generator-soju",
+
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
