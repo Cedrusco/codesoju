@@ -4,25 +4,9 @@ var yeoman = require('yeoman-generator'),
 
 module.exports = yeoman.Base.extend({
 
-    prompting: function () {
-
-        var done = this.async();
-
-        var prompts = [
-        ];
-
-        return this.prompt(prompts).then(function (props) {
-
-            done();
-    
-        }.bind(this));
-  
-    },
-
     writing: function () {
 
-        var context = {},
-            isInstalled = false;
+        var isInstalled = false;
 
         /* Search and install DFXIO dependency */
         var package_file = JSON.parse(html_wiring.readFileAsString('package.json'));
@@ -73,10 +57,6 @@ module.exports = yeoman.Base.extend({
             this.log( 'dfxio has been installed properly in your application' );
     
         }
-
-    },
-
-    installing: function () {
 
     }
 });
