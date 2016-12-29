@@ -15,9 +15,9 @@ module.exports = yeoman.Base.extend({
                 type: 'list',
                 name: 'memory',
                 message: 'How much memory do you want to set for this app?',
-                choices: [ '256M', '512M' ]
+                choices: ['256M', '512M']
             }];
-        this.log('Welcome to ' + chalk.red('Soju Generator') + ' v 1.0');
+        this.log('Welcome to ' + chalk.red('CodeSoju Generator'));
         this.log();
 
         return this.prompt(prompts).then(function (props) {
@@ -27,7 +27,7 @@ module.exports = yeoman.Base.extend({
             done();
 
         }.bind(this));
-  
+
     },
 
     writing: function () {
@@ -38,7 +38,7 @@ module.exports = yeoman.Base.extend({
         };
         this.template('manifest.yml', 'manifest.yml', context);
         this.copy('.cfignore', '.cfignore');
-  
+
     }
 
 });

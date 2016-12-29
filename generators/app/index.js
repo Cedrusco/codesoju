@@ -2,11 +2,11 @@
 var yeoman = require('yeoman-generator'),
     chalk = require('chalk');
 
-module.exports = yeoman.Base.extend({
+module.exports = yeoman.extend({
 
     prompting: function () {
 
-        this.log('Welcome to ' + chalk.red('Soju Generator') + ' v 1.0');
+        this.log('Welcome to ' + chalk.red('CodeSoju Generator'));
         this.log();
 
         var done = this.async(),
@@ -26,27 +26,25 @@ module.exports = yeoman.Base.extend({
             this.appName = props.name;
             this.angularVersion = props.angularVersion;
             done();
-    
+
         }.bind(this));
-  
+
     },
 
     writing: function () {
 
         if (this.angularVersion === 'Angular-1') {
 
-            this.directory('angular1', this.destinationRoot());
-    
+            this.fs.copy(this.templatePath('angular1'), this.destinationRoot());
+
         } else if (this.angularVersion === 'Angular-2') {
 
-            this.directory('angular2', this.destinationRoot());
-    
-        } else {
+            this.fs.copy(this.templatePath('angular2'), this.destinationRoot());
 
-            this.directory('cordova-mobile', this.destinationRoot());
-    
+        } else {
+            this.fs.copy(this.templatePath('cordova-mobile'), this.destinationRoot());
         }
-  
+
     },
 
     installing: function () {
@@ -54,16 +52,16 @@ module.exports = yeoman.Base.extend({
         if (this.angularVersion === 'Angular-1') {
 
             this.runInstall('./setup.sh');
-    
+
         } else if (this.angularVersion === 'Angular-2') {
 
             this.npmInstall();
-    
+
         } else {
 
             this.runInstall('./setup_mobile.sh');
-    
+
         }
-  
+
     }
 });
