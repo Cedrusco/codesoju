@@ -6,27 +6,27 @@ var yeoman = require('yeoman-generator'),
 module.exports = yeoman.Base.extend({
     prompting: function () {
 
-        var done = this.async();
 
         this.log('Welcome to ' + chalk.red('Codesoju Generator') + ' v 1.0');
         this.log(chalk.green('This operator lets you to add a geolocation/Google Map feature'));
         this.log();
 
-        var prompts = [{
-            type: 'confirm',
-            name: 'mobile',
-            message: 'Is it a Codesoju mobile application?'
-        },
-            {
-                type: 'input',
-                name: 'google_dev_key',
-                message: 'Please provide us with your Google developer key',
-                when: function (answers) {
+        var done = this.async(),
+            prompts = [{
+                type: 'confirm',
+                name: 'mobile',
+                message: 'Is it a Codesoju mobile application?'
+            },
+                {
+                    type: 'input',
+                    name: 'google_dev_key',
+                    message: 'Please provide us with your Google developer key',
+                    when: function (answers) {
 
-                    return answers.mobile;
+                        return answers.mobile;
         
-                }
-            }];
+                    }
+                }];
 
         return this.prompt(prompts).then(function (props) {
 
