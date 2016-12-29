@@ -1,5 +1,5 @@
 {
-  "name": "generator-soju",
+  "name": "generator-codesoju",
   "version": "1.0.0",
   "description": "Generate your CodeSoju App.",
   "homepage": "https://github.com/Cedrusco/soju-generator",
@@ -13,6 +13,7 @@
   ],
   "main": "generators/index.js",
   "keywords": [
+    "cedrus",
     "codesoju",
     "yeoman-generator"
   ],
