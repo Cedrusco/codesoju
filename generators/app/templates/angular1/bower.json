@@ -1,5 +1,5 @@
 {
-  "name": "soju",
+  "name": "<%= appName %>",
   "version": "1.0.0",
   "homepage": "https://github.com/Cedrusco/Soju",
   "description": "Soju project",
