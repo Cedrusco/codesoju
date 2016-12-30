@@ -4,4 +4,4 @@ var $ = require('gulp-load-plugins')({ lazy: true, rename: { 'gulp-task-listing'
 
 exports.task = function () {
     return $.taskListing();
-}
+};

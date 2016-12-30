@@ -1,1 +1,1 @@
-exports.dependencies = ['lint-js', 'lint-scss']
+exports.dependencies = ['lint-js', 'lint-scss'];

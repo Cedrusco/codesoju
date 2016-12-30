@@ -10,7 +10,7 @@ exports.paths = {
 		'client/app/**/*.html'
 	],
 	scss: [
-		'client/scss/**/*.scss'
+		'client/app/**/*.scss'
 	],
 	pathsToLint: [
 		'client/app/**/*.js',
