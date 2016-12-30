@@ -1,8 +1,8 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 
-module.exports = yeoman.Base.extend({
-  
+module.exports = yeoman.extend({
+
     prompting: function () {
 
         var done = this.async(),
@@ -16,9 +16,9 @@ module.exports = yeoman.Base.extend({
 
             this.controllerName = props.name;
             done();
-        
+
         }.bind(this));
-  
+
     },
 
     writing: function () {
@@ -27,13 +27,11 @@ module.exports = yeoman.Base.extend({
             controllerName: this.controllerName,
             appName: this.determineAppname()
         };
-        this.template('controller.js', 'client/app/' + this.controllerName + '/' + this.controllerName + '.controller.js', context);
-  
+        this.fs.copyTpl(this.templatePath('controller.js'), this.destinationPath('client/app/' + this.controllerName + '/' + this.controllerName + '.controller.js'), context);
+
     },
 
     installing: function () {
-
-        this.runInstall('gulp buildApp');
-  
+        this.spawnCommand('gulp');
     }
 });
