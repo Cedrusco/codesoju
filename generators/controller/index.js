@@ -1,34 +1,37 @@
 'use strict';
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
 
-module.exports = yeoman.Base.extend({
-  
-  prompting: function () {
-    var done = this.async();
+module.exports = yeoman.extend({
 
-    var prompts = [{
-      type: 'input',
-      name: 'name',
-      message: 'What is the name of your controller?'
-    }];
+    prompting: function () {
 
-    return this.prompt(prompts).then(function (props) {
-      this.controllerName = props.name;
-      done();
-    }.bind(this));
-  },
+        var done = this.async(),
+            prompts = [{
+                type: 'input',
+                name: 'name',
+                message: 'What is the name of your controller?'
+            }];
 
-  writing: function () {
-    var context = {
-      controllerName: this.controllerName,
-      appName: this.determineAppname()
-    };
-    this.template('controller.js', 'client/app/'+ this.controllerName + '/' + this.controllerName + '.controller.js', context);
-  },
+        return this.prompt(prompts).then(function (props) {
 
-  installing: function () {
-    this.runInstall('gulp buildApp');
-  }
+            this.controllerName = props.name;
+            done();
+
+        }.bind(this));
+
+    },
+
+    writing: function () {
+
+        var context = {
+            controllerName: this.controllerName,
+            appName: this.determineAppname()
+        };
+        this.fs.copyTpl(this.templatePath('controller.js'), this.destinationPath('client/app/' + this.controllerName + '/' + this.controllerName + '.controller.js'), context);
+
+    },
+
+    installing: function () {
+        this.spawnCommand('gulp');
+    }
 });
