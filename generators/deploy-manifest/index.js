@@ -2,7 +2,7 @@
 var yeoman = require('yeoman-generator'),
     chalk = require('chalk');
 
-module.exports = yeoman.Base.extend({
+module.exports = yeoman.extend({
 
     prompting: function () {
 
@@ -36,8 +36,8 @@ module.exports = yeoman.Base.extend({
             appName: this.appName,
             appMemory: this.appMemory
         };
-        this.template('manifest.yml', 'manifest.yml', context);
-        this.copy('.cfignore', '.cfignore');
+        this.fs.copyTpl(this.templatePath('manifest.yml'), this.destinationPath('manifest.yml'), context);
+        this.fs.copy(this.templatePath('.cfignore'), this.destinationPath('.cfignore'));
 
     }
 
