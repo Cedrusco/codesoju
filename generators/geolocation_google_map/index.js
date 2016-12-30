@@ -3,11 +3,11 @@ var yeoman = require('yeoman-generator'),
     chalk = require('chalk'),
     html_wiring = require('html-wiring');
 
-module.exports = yeoman.Base.extend({
+module.exports = yeoman.extend({
     prompting: function () {
 
 
-        this.log('Welcome to ' + chalk.red('Codesoju Generator'));
+        this.log('Welcome to ' + chalk.red('CodeSoju Generator'));
         this.log(chalk.green('This operator lets you to add a geolocation/Google Map feature'));
         this.log();
 
