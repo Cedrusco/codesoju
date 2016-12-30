@@ -1,4 +1,4 @@
-# CodeSoju
+# <%= appName %>
 
 <img src="https://github.com/Cedrusco/soju/blob/develop/client/app/assets/images/readMe.png?raw=true"></img>
 
