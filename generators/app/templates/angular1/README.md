@@ -1,7 +1,5 @@
 # <%= appName %>
 
-<img src="https://github.com/Cedrusco/soju/blob/develop/client/app/assets/images/readMe.png?raw=true"></img>
-
 # CodeSoju Generated App
 
 <img src="https://github.com/Cedrusco/soju/blob/develop/client/app/assets/images/readMe.png?raw=true"></img>
@@ -24,10 +22,6 @@ Have 2 tabs open in your terminal in the root of the app. Run `gulp` in one. It 
 ## Development practices
 - Work on issue/feature branches
 - Pull request into develop branch when ready
-<<<<<<< HEAD
-- Pull request from develop branch into master branch periodically (after testing) 
-=======
 - Pull request from develop branch into master branch periodically (after testing)
 
 ### Visit **[CodeSoju](http://codesoju.io)** for more information
->>>>>>> 4f0a9ab5bc36b20d3de7e1e60bdcf8012196829e
