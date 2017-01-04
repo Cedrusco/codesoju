@@ -49,7 +49,7 @@ module.exports = yeoman.extend({
 
         if (this.angularVersion === 'Angular-1') {
 
-            this.fs.copy(this.templatePath('angular1'), this.destinationRoot());
+            this.fs.copy(this.templatePath('angular1'), this.destinationRoot(), { globOptions: { dot: true }});
             this.fs.copyTpl(this.templatePath('angular1/**/*.{json,md,html}'), this.destinationRoot(), this);
 
 
@@ -58,7 +58,7 @@ module.exports = yeoman.extend({
             this.fs.copyTpl(this.templatePath('angular2'), this.destinationRoot(), this);
 
         } else {
-            this.fs.copy(this.templatePath('cordova-mobile'), this.destinationRoot(), this);
+            this.fs.copy(this.templatePath('cordova-mobile'), this.destinationRoot(), { globOptions: { dot: true }});
             this.fs.copyTpl(this.templatePath('cordova-mobile/**/*.{json,md,html}'), this.destinationRoot(), this);
         }
 

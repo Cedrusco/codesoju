@@ -1,14 +1,14 @@
 'use strict';
 
 var gulp = require('gulp'),
-	config = require('../gulpfile.config'),
-	$ = require('gulp-load-plugins')({ lazy: true });
+    config = require('../gulpfile.config'),
+    $ = require('gulp-load-plugins')({ lazy: true });
 
 exports.task = function() {
 
-	gulp.src([config.paths.assets]).pipe(gulp.dest('client/dist'));
+    gulp.src([config.paths.assets]).pipe(gulp.dest('client/dist'));
 
-	return gulp.src('client/scss/main.scss')
+    return gulp.src('client/app/main.scss')
 		.pipe($.plumber())
 		.pipe($.concat('main.scss'))
 		.pipe($.sass())
