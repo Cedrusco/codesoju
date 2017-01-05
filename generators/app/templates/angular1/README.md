@@ -2,7 +2,13 @@
 
 # CodeSoju Generated App
 
-<img src="https://github.com/Cedrusco/soju/blob/develop/client/app/assets/images/readMe.png?raw=true"></img>
+<img src="client/app/assets/images/readMe.png"></img>
+
+## Pre-commit check
+Check .hooks/commit-msg
+
+Be sure to start the commit with the name of the project and the issue number, or 'Refactor' when you commit,
+or your commit will fail. (i.e. SOJU-2819) or 'Refactor'.
 
 ## Setup
 to properly set up your repo after downloading run:

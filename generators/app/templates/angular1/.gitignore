@@ -2,4 +2,8 @@ bower_components/
 node_modules/
 npm-debug.log
 .sass-cache
-client/dist
+dist
+.vscode
+.idea/
+**/.DS_Store
+

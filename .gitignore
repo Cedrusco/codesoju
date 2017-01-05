@@ -1,3 +1,8 @@
 node_modules
+npm-debug.log
+.vscode
+.idea/
 **/.DS_Store
 coverage
+temp-repo
+
