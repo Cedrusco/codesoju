@@ -1,4 +1,9 @@
+.gitignore
+.gitattributes
 test
 coverage
 gulpfile.js
 .eslintrc.json
+npm-debug.log
+.vscode
+temp-repo
