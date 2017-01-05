@@ -45,8 +45,8 @@ function run {
   fi
 
   git add -A
-  git commit -am "U: version $VERSION"
-  git tag -f v$VERSION
+  git commit -am "Update: version $VERSION"
+  # git tag -f v$VERSION
 
   # echo "-- Pushing to codesoju"
   # git push -q origin master
