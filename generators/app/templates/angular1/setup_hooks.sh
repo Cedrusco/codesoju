@@ -1,2 +1,2 @@
 echo "Placing git repository hooks..."
-cp .hooks/* .git/hooks/
+cp -R .hooks/ .git/hooks/
