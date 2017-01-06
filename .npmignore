@@ -2,10 +2,14 @@ test
 coverage
 temp-repo
 scripts
+.git
 .gitignore
 .gitattributes
 .eslintrc.json
 .vscode
 .idea
+.DS_Store
+.npmrc
 npm-debug.log
+# application specific
 gulpfile.js
