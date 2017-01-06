@@ -1,7 +1,7 @@
 {
   "name": "generator-codesoju",
-  "version": "0.2.3",
-  "description": "Generate your integrated Application for Angular, mobile. Bringing Front End development best practices, tools and standards in one place",
+  "version": "0.2.4",
+  "description": "Generate your integrated Angular and Mobile applications. Bring front-end development best practices, tools and standards in one place",
   "homepage": "https://github.com/Cedrusco/codesoju",
   "author": {
     "name": "Cedrus",
