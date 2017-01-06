@@ -48,14 +48,15 @@ function run {
   git commit -am "Update: version $VERSION"
   git tag -f v$VERSION
 
-  echo "-- Pushing to codesoju"
+  echo "-- Pushing to codesoju repository"
   git push -q origin master
   git push -q origin v$VERSION
 
   echo "-- Version $VERSION pushed successfully to Cedrusco/codesoju!"
-
+  echo "-- You can publish to npmjs.org using: npm publish"
   # publish to npm
-  # npm publish  -tag
+  # echo "-- Publish to npm"
+  # npm publish
 
   cd ../
 

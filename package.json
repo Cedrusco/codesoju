@@ -1,8 +1,8 @@
 {
   "name": "generator-codesoju",
-  "version": "0.2.2",
-  "description": "Generate your CodeSoju App.",
-  "homepage": "http://codesoju.io",
+  "version": "0.2.3",
+  "description": "Generate your integrated Application for Angular, mobile. Bringing Front End development best practices, tools and standards in one place",
+  "homepage": "https://github.com/Cedrusco/codesoju",
   "author": {
     "name": "Cedrus",
     "email": "info@cedrusco.com",
