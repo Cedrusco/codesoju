@@ -1,9 +1,10 @@
 {
 	"env": {
 		"browser": true,
-		"node": true
+		"node": true,
+		"mocha": true
 	},
-	"extends": "eslint-config-airbnb-es5",
+	"extends": "eslint:recommended",
 	"rules": {
 		"indent": [
 			"error",
@@ -21,22 +22,17 @@
 			"error",
 			"always"
 		],
-		"one-var": [
-			"error", 
-			"always"
-		],
 		"no-trailing-spaces": [
-			"error", 
-			{ 
-				"skipBlankLines": true 
+			"error", {
+				"skipBlankLines": true
 			}
 		],
-		"padded-blocks": [
-			"error", 
-			"always"
-		],
+		"one-var": "off",
+		"padded-blocks": "off",
 		"func-names": "off",
-		"no-console": "off"
+		"no-console": "off",
+		"no-unused-vars": "warn",
+		"no-inner-declarations": "warn"
 	},
 	"globals": {
 		"angular": true,

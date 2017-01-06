@@ -1,3 +1,10 @@
+/***********************************************
+ Import page specific styles, mixins, variables
+ ***********************************************/
+// Common
+@import 'mixins/mixins';
+@import 'variables/variables';
+
 .section-content{
     flex-direction: row;
     justify-content: space-around;
@@ -80,7 +87,7 @@ md-toolbar.toolbar-shared{
         margin-top: 70px;
         height: inherit;
     }
-    
+
     .footer{
         padding: 0px;
     }

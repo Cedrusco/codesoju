@@ -50,16 +50,13 @@
 /*Media query for iPhone5 End*/
 
 /*********************************************
-    Import page specific styles, mixins, variables
-    ********************************************/
-
-@import 'mixins/main';
-@import 'variables/main';
-@import 'landing/main';
-@import 'home/main';
-@import 'user_profile/main';
-@import 'newsfeed/main';
-@import 'feed/main';
-@import 'shared/main';
-@import 'cms_content/main';
-@import 'auth/main';
+Import page specific styles, mixins, variables
+********************************************/
+@import 'shared/shared';
+@import 'landing/landing';
+@import 'home/home';
+@import 'user_profile/user_profile';
+@import 'newsfeed/newsfeed';
+@import 'feed/feed';
+@import 'cms_content/cms_content';
+@import 'auth/auth';

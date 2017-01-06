@@ -2,7 +2,7 @@
 
 angular.module('Soju')
 
-.controller('MainController', ['$location', '$scope', 'featureToggle', function ($location, $scope, featureToggle) {
+.controller('MainController', ['$location', '$scope', 'ENV','featureToggle', function ($location, $scope, ENV,featureToggle) {
 
     featureToggle.init();
 
@@ -17,18 +17,19 @@ angular.module('Soju')
         $location.path('/');
 
     };
-    $scope.checkNodeBaseUrl = function() {
+
+    $scope.checkNodeBaseUrl = function () {
 
         if (ENV.baseUrl === '<YOUR_BASE_URL>') {
 
-            alert('To reach Node you have to deploy your app first and configure your base url. Please check ReadMe')
+            alert('To reach Node you have to deploy your app first and configure your base url. Please check ReadMe');
+
         }
 
     };
-
     $scope.reportAppLaunched = function (url) {
 
-        url = url.substring(url.indexOf("/") + 1);
+        url = url.substring(url.indexOf('/') + 1);
 
         $location.path('/home');
         $scope.$apply();

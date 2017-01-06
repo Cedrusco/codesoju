@@ -1,6 +1,7 @@
 /* Variables */
 
 exports.paths = {
+	dist: 'dist/client',
 	javascripts: [
 		'client/app/**/*.js'
 	],

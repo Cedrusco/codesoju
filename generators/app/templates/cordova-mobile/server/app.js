@@ -20,10 +20,9 @@ require(path.join(__dirname, '/configuration/routes.js'))(app);
 app.use(logger('dev'));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, '../bower_components')));
-app.use(express.static(path.join(__dirname, '../node_modules')));
-app.use(express.static('client/dist/'));
-app.use('/*', express.static(path.join(__dirname, '../client/')));
+app.use(express.static('bower_components'));
+app.use(express.static('node_modules'));
+app.use(express.static('dist/client/'));
 
 // Error catch
 app.use(function (err, req, res, next) {

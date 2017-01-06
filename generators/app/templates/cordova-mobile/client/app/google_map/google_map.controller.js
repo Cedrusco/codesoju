@@ -3,7 +3,7 @@
 angular.module('Soju')
 
 .controller('GoogleMapController', ['$scope', '$location', '$mdSidenav', '$log', function ($scope, $location, $mdSidenav, $log) {
-    
+
     $scope.close = function () {
 
         $mdSidenav('left').close()
@@ -16,7 +16,7 @@ angular.module('Soju')
     };
 
     $scope.toggleList = function () {
-        
+
         $mdSidenav('left').toggle();
 
     };
@@ -24,7 +24,7 @@ angular.module('Soju')
     $scope.searchPlaces = function () {
 
         if (angular.element(document.querySelector('#mapExecute')).length) {
-            
+
             $scope.showMap = true;
             var Map,
                 Infowindow,
@@ -34,7 +34,7 @@ angular.module('Soju')
             // Success callback for get geo coordinates
 
             var onPlacesSuccess = function (position) {
-                
+
                 Latitude = position.coords.latitude;
                 Longitude = position.coords.longitude;
 

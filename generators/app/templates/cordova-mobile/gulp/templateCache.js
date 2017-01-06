@@ -13,7 +13,7 @@ exports.task = function () {
 			removeComments: true
 		}))
 		.pipe($.templatecache('templates.js', { module: 'Soju'}))
-		.pipe(gulp.dest('client/dist/'))
+		.pipe(gulp.dest(config.paths.dist))
 		.pipe(gulp.dest('www/scripts'));
 
 };
