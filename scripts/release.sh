@@ -31,7 +31,7 @@ function run {
 
   # cloneRepo "angular2" "git@github.com:Cedrusco/codesoju-angular2"  "../generators/app/templates/angular2"
 
-  # cloneRepo "mobile" "git@github.com:Cedrusco/codesoju-mobile"  "../generators/app/templates/cordova-mobile"
+  cloneRepo "mobile" "git@github.com:Cedrusco/codesoju-mobile"  "../generators/app/templates/cordova-mobile"
 
 
   # Clear the temp folder
@@ -46,11 +46,11 @@ function run {
 
   git add -A
   git commit -am "Update: version $VERSION"
-  # git tag -f v$VERSION
+  git tag -f v$VERSION
 
-  # echo "-- Pushing to codesoju"
-  # git push -q origin master
-  # git push -q origin v$VERSION
+  echo "-- Pushing to codesoju"
+  git push -q origin master
+  git push -q origin v$VERSION
 
   echo "-- Version $VERSION pushed successfully to Cedrusco/codesoju!"
 
