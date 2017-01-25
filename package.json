@@ -13,9 +13,14 @@
   ],
   "main": "generators/index.js",
   "keywords": [
+    "yeoman-generator",
     "cedrus",
     "codesoju",
-    "yeoman-generator"
+    "angular",
+    "angularjs",
+    "mobile",
+    "cordova",
+    "cloudfoundry"
   ],
   "repository": {
     "type": "git",
